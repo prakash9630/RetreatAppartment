@@ -11,7 +11,7 @@ import android.widget.ImageView;
  * Created by prakash on 8/8/2016.
  */
 public class customSwip extends PagerAdapter {
-    private int[] imageResource={R.drawable.image,R.drawable.image2,R.drawable.image3};
+    private int[] imageResource={R.drawable.image,R.drawable.image2,R.drawable.image4,R.drawable.image5,R.drawable.image3};
     private Context ctx;
     private LayoutInflater layoutInflater;
 
