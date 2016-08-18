@@ -1,5 +1,6 @@
 package project.revision.tap.retre;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -17,6 +20,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     ViewPager viewPager;
     customSwip customSwip;
+    LinearLayout mLinear1,mLinear2,mLinear3,mLinear4;
+    LinearLayout mContact,mBook;
+
 
 
 
@@ -26,6 +32,37 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
+        mLinear1=(LinearLayout)findViewById(R.id.linear1);
+        mLinear2=(LinearLayout)findViewById(R.id.linear2);
+        mLinear3=(LinearLayout)findViewById(R.id.linear3);
+        mLinear4=(LinearLayout)findViewById(R.id.linear4);
+        mBook=(LinearLayout)findViewById(R.id.booknow);
+        mContact=(LinearLayout)findViewById(R.id.contactnow);
+        mLinear2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,RoomType.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
+
+
+
+mBook.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent i=new Intent(MainActivity.this,Booking.class);
+        startActivity(i);
+    }
+});
+
+
+
+
 
 
         setSupportActionBar(toolbar);
@@ -50,6 +87,9 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -60,6 +100,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -75,6 +119,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
@@ -99,19 +144,31 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.nav_book) {
+            Intent i=new Intent(MainActivity.this,Booking.class);
+            startActivity(i);
+
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_contact) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_travel) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_rooms) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_directory) {
 
         }
+        else if (id == R.id.nav_amenities) {
+
+        }
+        else if (id == R.id.nav_location) {
+
+        }
+        else if (id == R.id.nav_feedback) {
+
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

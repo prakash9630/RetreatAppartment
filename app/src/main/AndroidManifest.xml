@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -20,6 +21,22 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".Rooms.OneBedroomExecutive"></activity>
+        <activity android:name=".Rooms.PenthouseHimayalaView"></activity>
+        <activity android:name=".Rooms.ThreeBedRoomHimayalaView"></activity>
+        <activity android:name=".Rooms.TwoBedRoomDeluxe"></activity>
+        <activity android:name=".Rooms.ValueForMoney"></activity>
+        <activity android:name=".Booking" android:label="Booking Enquiry" >
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"></meta-data>
+
+
+        </activity>
+        <activity android:name=".RoomType" android:label="RoomType">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"></meta-data>
 
         </activity>
     </application>

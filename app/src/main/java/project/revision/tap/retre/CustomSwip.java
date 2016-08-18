@@ -1,17 +1,24 @@
 package project.revision.tap.retre;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import project.revision.tap.retre.Rooms.OneBedroomExecutive;
+import project.revision.tap.retre.Rooms.PenthouseHimayalaView;
+import project.revision.tap.retre.Rooms.ThreeBedRoomHimayalaView;
+import project.revision.tap.retre.Rooms.TwoBedRoomDeluxe;
+import project.revision.tap.retre.Rooms.ValueForMoney;
+
 /**
  * Created by prakash on 8/8/2016.
  */
 public class customSwip extends PagerAdapter {
-    private int[] imageResource={R.drawable.image,R.drawable.image2,R.drawable.image4,R.drawable.image5,R.drawable.image3};
+    private int[] imageResource={R.drawable.penthouse,R.drawable.threebedroomhimalayaview,R.drawable.onebedroomexecutive,R.drawable.twobedroomdeluxe,R.drawable.valueformoney};
     private Context ctx;
     private LayoutInflater layoutInflater;
 
@@ -40,12 +47,43 @@ public class customSwip extends PagerAdapter {
      * need to be a View, but can be some other container of the page.
      */
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         layoutInflater=(LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemView=layoutInflater.inflate(R.layout.activity_custom_swip,container,false);
-        ImageView imageView=(ImageView) itemView.findViewById(R.id.swip_image);
+        final ImageView imageView=(ImageView) itemView.findViewById(R.id.swip_image);
         imageView.setImageResource(imageResource[position]);
         container.addView(itemView);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+           if (position==0)
+           {
+               Intent i=new Intent(ctx,PenthouseHimayalaView.class);
+               ctx.startActivity(i);
+           }
+                if (position==1)
+                {
+                    Intent i=new Intent(ctx, ThreeBedRoomHimayalaView.class);
+                    ctx.startActivity(i);
+                }
+                if(position==2)
+                {
+                    Intent i=new Intent(ctx, OneBedroomExecutive.class);
+                    ctx.startActivity(i);
+                }
+                if(position==3)
+                {
+                    Intent i=new Intent(ctx, TwoBedRoomDeluxe.class);
+                    ctx.startActivity(i);
+                }
+                if(position==4)
+                {
+                    Intent i=new Intent(ctx, ValueForMoney.class);
+                    ctx.startActivity(i);
+                }
+            }
+        });
         return itemView;
 
     }

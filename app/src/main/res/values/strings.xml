@@ -5,4 +5,75 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="bookstring">Book now</string>
+    <string name="Arrival">Arrival Date :</string>
+    <string name="Departure">Departure Date :</string>
+    <string name="units">Units :</string>
+    <string name="person">Persons :</string>
+    <string name="Contact">Contact now</string>
+    <string name="penthouse">Penthouse Himalaya View</string>
+    <string name="threebedroomhimalayaview">3 Bedroom Himalaya View</string>
+    <string name="onebedroomexecutive">1 BedRoom Executive</string>
+    <string name="twobedroomdroomdelux">2 BedRoom Deluxe</string>
+    <string name="valueformoney">2 Bedroom Standard</string>
+   <string name="penthousemiddleparagraph">
+ 
+       
+              Well furnished 3 bedroom penthouse apartment with a big terrace on the top floor of Retreat Serviced Apartment. The terrace has its own sink, table plus chairs, barbeque and awning and is ready for you to fully get the most out of an amazing stay in Kathmandu. The eye to eye view with the Buddha of Swayambhu is breathtaking. Nights on your terrace are like living in an exotic fairytale and during clear days you can gaze to spectacular peaks of the Himalaya.
+
+
+     </string>
+    <string name="penthouselastparagraph">The terrace has its own sink, table plus chairs, barbeque and awning and is ready for you to fully get the most out of an amazing stay in Kathmandu. The eye to eye view with the Buddha of Swayambhu is breathtaking.</string>
+  <string name="onebedroomexecutivefirstparagraph">
+      Get Inspired !
+Work with some of the best views over the city and Swayambunath. Do you need to work on a strategy, a book or other things that require peace and inspiration than this is your apartment.
+
+
+  </string>
+    <string name="onebedroomexecutivesecondparagraph">
+
+        In this top floor 1bhk serviced apartment you can work or relax in the study room with an open view over the Kathmandu Valley and on very clear days the Mount Everest. To get refreshed your bedroom with a balcony has maybe an even spectacular view ! Eye to eye with Buddha's eyes of Swayambunath, Kathmandu's most beautiful heritage site.
+The bright apartments has a comfortable sitting area where you can enjoy the TV or chat with friends, if you look over your right you can see the Kathmandu Valley.
+    </string>
+
+    <string name="onebedexecutivethirdparagraph">
+
+        This apartment is ideal for business people, writers, composers or other people who want to relax, get inspired and work out good ideas.
+    </string>
+
+
+    <string name="twobedroomdeluxfirstparagraph">
+        Fully furnished spacious 2 bedroom apartments with 1 or 2 balconies that have spectacular views.
+    </string>
+    <string name="twobedroomdeluxsecondparagraph">
+        Highlights are the kitchens with open views on either Swayambhunath or the mountains surrounding Kathmandu and the bright bedrooms with extra comfortable mattresses. Each of the 2 bedroom Deluxe apartments are furnished and maintained according to the high standards of Retreat Serviced Apartments. The difference with the standard apartments is that deluxe apartments are on higher floors or have a bigger dinning living room area.
+    </string>
+  <string name="twobedroomdeluxthirdparagraph">
+
+      Highlights are the kitchens with open views on either Swayambhunath or the mountains surrounding Kathmandu and the bright bedrooms with extra comfortable mattresses. Each of the 2 bedroom Deluxe apartments are furnished and maintained according to the high standards of Retreat Serviced Apartments. The difference with the standard apartments is that deluxe apartments are on higher floors or have a bigger dinning living room area.
+  </string>
+  
+    <string-array name="Units">
+        
+        
+<item>1</item>
+        <item>2</item>
+        <item>3</item>
+
+
+
+    </string-array>
+    <string-array name="person">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+
+
+    </string-array>
+
+
+
 </resources>

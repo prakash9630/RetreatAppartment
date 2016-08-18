@@ -10,19 +10,28 @@ android:weightSum="100"
     tools:context="project.revision.tap.retre.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+
+
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="40"
 
 
-            android:id="@+id/fragment_viewpager"
+            android:id="@+id/fragment_viewpager">
 
 
-            />
+
+
+
+
+
+
+        </android.support.v4.view.ViewPager>
+
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/inciator"
-            android:background="#99000000"
+            android:background="@color/thembluecolor"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="4"/>
@@ -31,7 +40,7 @@ android:weightSum="100"
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="56">
+            android:layout_weight="46">
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -39,11 +48,13 @@ android:weightSum="100"
 
 
                         <LinearLayout
+
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
                                 <LinearLayout
+                                    android:id="@+id/first_linearlayout"
                                     android:layout_width="match_parent"
                                     android:layout_height="150dp"
                                     android:orientation="horizontal"
@@ -53,7 +64,7 @@ android:weightSum="100"
                                         <android.support.v7.widget.CardView
                                             xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                             android:layout_width="0dp"
-                                            android:id="@+id/card_view3"
+                                            android:id="@+id/card_view1"
                                             android:elevation="20dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_weight=".4"
@@ -62,6 +73,29 @@ android:weightSum="100"
                                             android:layout_marginTop="@dimen/card_view_margintop"
                                             android:layout_height="@dimen/card_view_height">
 
+                                                <LinearLayout
+                                                    android:id="@+id/linear1"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/apartments"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Apartments"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
+
 
 
                                         </android.support.v7.widget.CardView>
@@ -69,7 +103,7 @@ android:weightSum="100"
                                         <android.support.v7.widget.CardView
                                             xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                             android:layout_width="0dp"
-                                            android:id="@+id/card_view4"
+                                            android:id="@+id/card_view2"
                                             android:elevation="20dp"
                                             card_view:cardBackgroundColor="@color/cardview_grey"
 
@@ -79,6 +113,31 @@ android:weightSum="100"
                                             android:layout_weight=".4"
                                             android:layout_marginTop="@dimen/card_view_margintop"
                                             android:layout_height="@dimen/card_view_height">
+
+
+
+                                                <LinearLayout
+                                                    android:id="@+id/linear2"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/rooms"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Rooms"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
 
 
 
@@ -96,6 +155,106 @@ android:weightSum="100"
 
                                 </LinearLayout>
                                 <LinearLayout
+                                    android:id="@+id/second_linearlayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:orientation="horizontal"
+                                    android:gravity="center"
+                                    android:weightSum="1">
+
+                                        <android.support.v7.widget.CardView
+                                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="0dp"
+                                            android:id="@+id/card_view3"
+                                            android:elevation="20dp"
+                                            card_view:cardBackgroundColor="@color/cardview_grey"
+
+                                            android:layout_marginRight="10dp"
+                                            android:layout_weight=".4"
+                                            android:layout_marginBottom="@dimen/card_view_margintop"
+                                            android:layout_marginTop="@dimen/card_view_margintop"
+                                            android:layout_height="@dimen/card_view_height">
+
+                                                <LinearLayout
+                                                    android:id="@+id/linear3"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/location"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Location"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
+
+
+
+                                        </android.support.v7.widget.CardView>
+
+                                        <android.support.v7.widget.CardView
+                                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="0dp"
+                                            android:id="@+id/card_view4"
+                                            android:elevation="20dp"
+                                            android:layout_marginBottom="@dimen/card_view_margintop"
+                                            card_view:cardBackgroundColor="@color/cardview_grey"
+
+                                            android:layout_marginLeft="@dimen/card_view_marginleftright"
+                                            android:layout_weight=".4"
+                                            android:layout_marginTop="@dimen/card_view_margintop"
+                                            android:layout_height="@dimen/card_view_height">
+
+                                                <LinearLayout
+                                                    android:id="@+id/linear4"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/gallery"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Gallary"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
+
+
+
+                                        </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:id="@+id/third_linearlayout"
                                     android:layout_width="match_parent"
                                     android:layout_height="150dp"
                                     android:orientation="horizontal"
@@ -115,6 +274,29 @@ android:weightSum="100"
                                             android:layout_marginTop="@dimen/card_view_margintop"
                                             android:layout_height="@dimen/card_view_height">
 
+                                                <LinearLayout
+                                                    android:id="@+id/linear5"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/travel"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Travel"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
+
 
 
                                         </android.support.v7.widget.CardView>
@@ -133,6 +315,30 @@ android:weightSum="100"
                                             android:layout_height="@dimen/card_view_height">
 
 
+                                                <LinearLayout
+                                                    android:id="@+id/linear6"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/directory"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Directory"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
+
+
 
                                         </android.support.v7.widget.CardView>
 
@@ -148,6 +354,7 @@ android:weightSum="100"
 
                                 </LinearLayout>
                                 <LinearLayout
+                                    android:id="@+id/fourth_linearlayout"
                                     android:layout_width="match_parent"
                                     android:layout_height="150dp"
                                     android:orientation="horizontal"
@@ -157,7 +364,7 @@ android:weightSum="100"
                                         <android.support.v7.widget.CardView
                                             xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                             android:layout_width="0dp"
-                                            android:id="@+id/card_view"
+                                            android:id="@+id/card_view7"
                                             android:elevation="20dp"
                                             card_view:cardBackgroundColor="@color/cardview_grey"
 
@@ -167,6 +374,29 @@ android:weightSum="100"
                                             android:layout_marginTop="@dimen/card_view_margintop"
                                             android:layout_height="@dimen/card_view_height">
 
+                                                <LinearLayout
+                                                    android:id="@+id/linear7"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/amenities"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Amenities"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
+
 
 
                                         </android.support.v7.widget.CardView>
@@ -174,7 +404,7 @@ android:weightSum="100"
                                         <android.support.v7.widget.CardView
                                             xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                             android:layout_width="0dp"
-                                            android:id="@+id/card_view1"
+                                            android:id="@+id/card_view8"
                                             android:elevation="20dp"
                                             android:layout_marginBottom="@dimen/card_view_margintop"
                                             card_view:cardBackgroundColor="@color/cardview_grey"
@@ -183,6 +413,30 @@ android:weightSum="100"
                                             android:layout_weight=".4"
                                             android:layout_marginTop="@dimen/card_view_margintop"
                                             android:layout_height="@dimen/card_view_height">
+
+
+                                                <LinearLayout
+                                                    android:id="@+id/linear8"
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="vertical"
+                                                    android:gravity="center"
+                                                    android:layout_height="match_parent">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/feedback"/>
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Feedback"
+                                                            android:textStyle="bold"
+                                                            android:textColor="@color/thembluecolor"/>
+
+
+
+                                                </LinearLayout>
 
 
 
@@ -218,6 +472,56 @@ android:weightSum="100"
 
 
                 </ScrollView>
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:weightSum="100"
+            android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/booknow"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/thembluecolor"
+                    android:gravity="center"
+                    android:layout_weight="49">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bookstring"
+
+                            android:textColor="#ffffff"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"></LinearLayout>
+                <LinearLayout
+                    android:id="@+id/contactnow"
+                    android:layout_width="0dp"
+                    android:background="@color/thembluecolor"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="49">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Contact"
+
+                            android:textColor="#ffffff"/>
+
+                </LinearLayout>
 
 
 
