@@ -10,8 +10,9 @@
     <dimen name="card_view_marginleftright">10dp</dimen>
     <dimen name="card_view_height">120dp</dimen>
     <dimen name="padding_roomlayout">5dp</dimen>
-    <dimen name="margin_roomtype_cardview">5dp</dimen>
-    <dimen name="height_of_edittext_in_booking">50dp</dimen>
+    <dimen name="paddingofrooms">10dp</dimen>
+    <dimen name="height_of_edittext_in_booking">40dp</dimen>
     <dimen name="padding_linearlayout_booking">5dp</dimen>
     <dimen name="Roomtypecardview">100dp</dimen>
+    <dimen name="Roomtype_name">10dp</dimen>
 </resources>

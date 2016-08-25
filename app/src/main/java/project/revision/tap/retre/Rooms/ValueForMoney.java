@@ -1,11 +1,13 @@
 package project.revision.tap.retre.Rooms;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import project.revision.tap.retre.Adapter.TwoBedroomStandard_adapter;
 import project.revision.tap.retre.R;
@@ -17,6 +19,7 @@ public class ValueForMoney extends AppCompatActivity{
     ViewPager mTwobedroomstandard;
     TwoBedroomStandard_adapter adapter;
     ImageButton mRignt,mLeft;
+    TextView mFirst;
 
 
     @Override
@@ -28,6 +31,9 @@ public class ValueForMoney extends AppCompatActivity{
         mTwobedroomstandard.setAdapter(adapter);
         mRignt=(ImageButton)findViewById(R.id.right_nav);
         mLeft=(ImageButton)findViewById(R.id.left_nav);
+        mFirst=(TextView)findViewById(R.id.twoBedroomStandard_paragraph1);
+        Typeface myTypeface=Typeface.createFromAsset(getAssets(),"Raleway-ExtraLight.ttf");
+        mFirst.setTypeface(myTypeface);
 
         mLeft.setOnClickListener(new View.OnClickListener() {
             @Override

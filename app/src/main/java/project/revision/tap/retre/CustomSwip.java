@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import project.revision.tap.retre.Rooms.OneBedroomExecutive;
 import project.revision.tap.retre.Rooms.PenthouseHimayalaView;
@@ -19,7 +20,8 @@ import project.revision.tap.retre.Rooms.ValueForMoney;
  */
 public class customSwip extends PagerAdapter {
     private int[] imageResource={R.drawable.penthouse,R.drawable.threebedroomhimalayaview,R.drawable.onebedroomexecutive,R.drawable.twobedroomdeluxe,R.drawable.valueformoney};
-    private Context ctx;
+    private String[] mImageName={"Penthouse","3 Bedroom himalaya View","1 Bedroom Executive","2 Bedroom Deluxe","2 Bedroom Standard"};
+     private Context ctx;
     private LayoutInflater layoutInflater;
 
 
@@ -49,9 +51,11 @@ public class customSwip extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         layoutInflater=(LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View itemView=layoutInflater.inflate(R.layout.activity_custom_swip,container,false);
-        final ImageView imageView=(ImageView) itemView.findViewById(R.id.swip_image);
+        View itemView=layoutInflater.inflate(R.layout.activity_custom_swipe_main_page,container,false);
+        final ImageView imageView=(ImageView) itemView.findViewById(R.id.swip_image_main);
         imageView.setImageResource(imageResource[position]);
+        TextView imageName=(TextView)itemView.findViewById(R.id.img_name);
+        imageName.setText(mImageName[position]);
         container.addView(itemView);
 
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +93,16 @@ public class customSwip extends PagerAdapter {
     }
 
     /**
+     * This method may be called by the ViewPager to obtain a title string
+     * to describe the specified page. This method may return null
+     * indicating no title for this page. The default implementation returns
+     * null.
+     *
+     * @param position The position of the title requested
+     * @return A title for the requested page
+     */
+
+    /**
      * Remove a page for the given position.  The adapter is responsible
      * for removing the view from its container, although it only must ensure
      * this is done by the time it returns from {@link #finishUpdate(ViewGroup)}.
@@ -98,8 +112,11 @@ public class customSwip extends PagerAdapter {
      * @param object    The same object that was returned by
      *                  {@link #instantiateItem(View, int)}.
      */
+
+
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
+        container.removeView((View) object);
 
     }
 
@@ -107,3 +124,4 @@ public class customSwip extends PagerAdapter {
         return (view==object);
     }
 }
+

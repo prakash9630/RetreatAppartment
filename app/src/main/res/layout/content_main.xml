@@ -12,10 +12,17 @@ android:weightSum="100"
 
 
 
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+
+    android:layout_weight="44">
+
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="40"
+            android:layout_height="match_parent"
+
 
 
             android:id="@+id/fragment_viewpager">
@@ -26,15 +33,20 @@ android:weightSum="100"
 
 
 
-
         </android.support.v4.view.ViewPager>
+
 
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/inciator"
-            android:background="@color/thembluecolor"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="25dp"
+
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"/>
+            android:layout_height="13dp"/>
+
+</FrameLayout>
+
+
 
 
         <LinearLayout
@@ -126,12 +138,12 @@ android:weightSum="100"
                                                         <ImageView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
-                                                            android:src="@drawable/rooms"/>
+                                                            android:src="@drawable/aboutus"/>
 
                                                         <TextView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
-                                                            android:text="Rooms"
+                                                            android:text="About us"
                                                             android:textStyle="bold"
                                                             android:textColor="@color/thembluecolor"/>
 

@@ -4,41 +4,55 @@
 
     <application
         android:allowBackup="true"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Splash"
             android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".Splash" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".Rooms.OneBedroomExecutive"></activity>
-        <activity android:name=".Rooms.PenthouseHimayalaView"></activity>
-        <activity android:name=".Rooms.ThreeBedRoomHimayalaView"></activity>
-        <activity android:name=".Rooms.TwoBedRoomDeluxe"></activity>
-        <activity android:name=".Rooms.ValueForMoney"></activity>
-        <activity android:name=".Booking" android:label="Booking Enquiry" >
-
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"></meta-data>
-
-
+        <activity android:name=".Rooms.OneBedroomExecutive" />
+        <activity android:name=".Rooms.PenthouseHimayalaView" />
+        <activity android:name=".Rooms.ThreeBedRoomHimayalaView" />
+        <activity android:name=".Rooms.TwoBedRoomDeluxe" />
+        <activity android:name=".Rooms.ValueForMoney" />
+        <activity
+            android:name=".About_Us"
+            android:label="Retreat Appartments" />
+        <activity
+            android:name=".Booking"
+            android:label="Booking Enquiry">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".RoomType" android:label="RoomType">
-
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"></meta-data>
-
+        <activity
+            android:name=".Gallary_activity"
+            android:label="Gallary" android:hardwareAccelerated="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
+        <activity
+            android:name=".AppartmentType"
+            android:hardwareAccelerated="false"
+            android:label="RoomType">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".Fullimage_activity"></activity>
     </application>
 
 </manifest>

@@ -38,10 +38,22 @@ public class MainActivity extends AppCompatActivity
         mLinear4=(LinearLayout)findViewById(R.id.linear4);
         mBook=(LinearLayout)findViewById(R.id.booknow);
         mContact=(LinearLayout)findViewById(R.id.contactnow);
-        mLinear2.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        mLinear1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,RoomType.class);
+                Intent i=new Intent(MainActivity.this,AppartmentType.class);
+                startActivity(i);
+            }
+        });
+
+        mLinear4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,Gallary_activity.class);
                 startActivity(i);
             }
         });
@@ -82,6 +94,10 @@ mBook.setOnClickListener(new View.OnClickListener() {
         customSwip=new customSwip(this);
         viewPager.setAdapter(customSwip);
         indicator.setViewPager(viewPager);
+
+
+
+
 
 
 
@@ -149,14 +165,20 @@ mBook.setOnClickListener(new View.OnClickListener() {
             startActivity(i);
 
         } else if (id == R.id.nav_gallery) {
+            Intent i=new Intent(this,Gallary_activity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_contact) {
 
         } else if (id == R.id.nav_travel) {
 
-        } else if (id == R.id.nav_rooms) {
+        } else if (id == R.id.nav_appartments) {
+            Intent i=new Intent(this,AppartmentType.class);
+            startActivity(i);
 
-        } else if (id == R.id.nav_directory) {
+        } else if (id == R.id.nav_emergency_call) {
+            Intent i=new Intent(this,Emergency_calls.class);
+            startActivity(i);
 
         }
         else if (id == R.id.nav_amenities) {

@@ -97,11 +97,11 @@
                     android:layout_height="wrap_content">
                     <TextView
 
-                        android:id="@+id/paragraph1"
+                        android:id="@+id/threeBedroom_paragraph1"
                         android:padding="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/penthousemiddleparagraph"
+                        android:text="@string/threebedroomhimayalaviewfirstparagraph"
                         />
 
 
@@ -111,10 +111,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/threeBedroom_paragraph2"
                         android:padding="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/penthouselastparagraph"
+                        android:text="@string/threebedroomhimayalaviewsecondparagraph"
                         />
 
 

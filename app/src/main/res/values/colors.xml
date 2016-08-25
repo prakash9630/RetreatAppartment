@@ -6,4 +6,6 @@
     <color name="toolbar">#CE1F29</color>
     <color name="cardview_grey">#F0F0F0</color>
     <color name="thembluecolor">#cc1B1464</color>
+    <color name="roomTypebackground">#F0F0F0</color>
+    <color name="black">#000000</color>
 </resources>
