@@ -13,6 +13,7 @@ import android.widget.Spinner;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -43,6 +44,9 @@ public class Booking extends AppCompatActivity {
         Personarray=ArrayAdapter.createFromResource(this,R.array.person,android.R.layout.simple_spinner_item);
         Personarray.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
        mPerson.setAdapter(Personarray);
+        isDateAfter(mArrive.getText().toString(),mDeparture.getText().toString());
+
+
 
 
 
@@ -115,4 +119,29 @@ public class Booking extends AppCompatActivity {
 
         mDeparture.setText(sdf.format(myCalendar.getTime()));
     }
+
+
+        public static boolean isDateAfter(String arrive,String departure)
+        {
+            try
+            {
+                String myFormatString = "MM/dd/yy"; // for example
+                SimpleDateFormat df = new SimpleDateFormat(myFormatString);
+                Date date1 = df.parse(departure);
+                Date startingDate = df.parse(arrive);
+
+                if (date1.after(startingDate))
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
+        }
+
+
+
 }

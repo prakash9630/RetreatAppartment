@@ -9,10 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
 import project.revision.tap.retre.Adapter.Gallary_Adapter;
 
 /**
@@ -22,6 +18,7 @@ public class Gallary_activity extends AppCompatActivity{
     Toolbar mToolbar;
     GridView gridView;
     Gallary_Adapter adapter;
+    int  j=0;
 
 
     @Override
@@ -34,14 +31,7 @@ public class Gallary_activity extends AppCompatActivity{
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        DisplayImageOptions displayImageOptions=new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .build();
-        ImageLoaderConfiguration imageLoaderConfiguration=new ImageLoaderConfiguration.Builder(getApplicationContext())
-                .defaultDisplayImageOptions(displayImageOptions)
-                .build();
-        ImageLoader.getInstance().init(imageLoaderConfiguration);
+
 
 
 
@@ -49,6 +39,7 @@ public class Gallary_activity extends AppCompatActivity{
         gridView=(GridView)findViewById(R.id.gridview);
          adapter=new Gallary_Adapter(this);
         gridView.setAdapter(adapter);
+
 
 
 

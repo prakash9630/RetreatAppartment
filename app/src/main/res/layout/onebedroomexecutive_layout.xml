@@ -54,6 +54,7 @@
                 android:id="@+id/oneroomexecutive_rooms">
 
             </android.support.v4.view.ViewPager>
+
             <ImageButton
                 android:id="@+id/left_nav"
                 android:layout_width="48dp"
@@ -82,16 +83,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
 
-                    android:layout_height="wrap_content">
-                    <TextView
+                    android:layout_height="match_parent">
 
-                        android:id="@+id/onebedroomexecutive_paragraph1"
-                        android:padding="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/one_bedroom_executive_first_paragraph"
-                        />
-
+<WebView
+    android:id="@+id/onebedroomexecutive_paragraph1"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></WebView>
 
                 </LinearLayout>
 
@@ -103,24 +101,11 @@
                         android:padding="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/one_bed_room_executive_second_paragraph"
                         />
 
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/onebedroomexecutive_p3"
-                        android:padding="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/one_bed_executive_third_paragraph"
-                        />
 
-
-                </LinearLayout>
 
 
 

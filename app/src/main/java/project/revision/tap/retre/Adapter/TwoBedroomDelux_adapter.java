@@ -13,7 +13,7 @@ import project.revision.tap.retre.R;
  * Created by prakash on 8/17/2016.
  */
 public class TwoBedroomDelux_adapter extends PagerAdapter {
-    private int mTwobedroomdelux[]={R.drawable.twobedroomdeluxe,R.drawable.twobedroomdelux1,R.drawable.twobedroomdelux2,R.drawable.twobedroomdelux4,R.drawable.twobedroomdelux5};
+    private int mTwobedroomdelux[]={R.drawable.twobedroomdelux1,R.drawable.twobedroomdelux2,R.drawable.twobedroomdelux3,R.drawable.twobedroomdelux4};
 
     Context ctx;
     LayoutInflater layoutInflater;
