@@ -13,7 +13,7 @@ import project.revision.tap.retre.R;
  * Created by prakash on 8/17/2016.
  */
 public class ThreeBedroomHimalayaView_adapter extends PagerAdapter{
-    private int threebedroomhimalayaview[]={R.drawable.threebedroomhimalayaview,R.drawable.threebedroomhimayalaview1,R.drawable.threebedroomhimayalaview2,R.drawable.threebedroomhimayalaview3,R.drawable.threebedroomhimayalaview4};
+    private int threebedroomhimalayaview[]={R.drawable.threebedroomhimayalaview,R.drawable.threebedroomhimayalaview2,R.drawable.threebedroomhimayalaview3,R.drawable.threebedroomhimayalaview4};
 
     Context ctx;
     LayoutInflater layoutInflater;

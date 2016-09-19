@@ -63,7 +63,7 @@
             android:layout_height="wrap_content">
         <TextView
             android:paddingLeft="12dp"
-android:drawableLeft="@drawable/drawable_calendar"
+
             android:textAlignment="center"
             android:layout_width="0dp"
             android:text="@string/Arrival"
@@ -96,7 +96,6 @@ android:textAlignment="center"
                 android:layout_height="wrap_content">
                 <TextView
                     android:paddingLeft="10dp"
-                    android:drawableLeft="@drawable/drawable_calendar"
                     android:textAlignment="center"
                     android:layout_width="0dp"
                     android:text="@string/Departure"
@@ -170,6 +169,7 @@ android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <Button
+                    android:id="@+id/check"
                     android:background="@drawable/button_shape"
                     android:layout_width="match_parent"
                     android:text="Check now"

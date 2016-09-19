@@ -90,6 +90,7 @@ android:weightSum="100"
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"
+                                                    android:background="@drawable/hoover"
                                                     android:layout_height="match_parent">
 
                                                         <ImageView
@@ -130,6 +131,7 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear2"
+                                                    android:background="@drawable/hoover"
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"
@@ -189,6 +191,8 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear3"
+                                                    android:background="@drawable/hoover"
+
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"
@@ -229,6 +233,8 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear4"
+                                                    android:background="@drawable/hoover"
+
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"
@@ -288,6 +294,8 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear5"
+                                                    android:background="@drawable/hoover"
+
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"
@@ -329,6 +337,8 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear6"
+                                                    android:background="@drawable/hoover"
+
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"
@@ -388,6 +398,8 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear7"
+                                                    android:background="@drawable/hoover"
+
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"
@@ -429,6 +441,8 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear8"
+                                                    android:background="@drawable/hoover"
+
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
                                                     android:gravity="center"

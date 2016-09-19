@@ -16,10 +16,7 @@
     <string name="onebedroomexecutive">1 BedRoom Executive</string>
     <string name="twobedroomdroomdelux">2 BedRoom Deluxe</string>
     <string name="valueformoney">2 Bedroom Standard</string>
-
-
-
-
+    <string name="about_us">About us</string>
 
 
     <string-array name="Units">
@@ -41,6 +38,7 @@
 
 
     </string-array>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>

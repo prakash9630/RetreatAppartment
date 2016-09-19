@@ -1,6 +1,7 @@
 package project.revision.tap.retre.Rooms;
 
-import android.graphics.Typeface;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
@@ -8,20 +9,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
-import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import project.revision.tap.retre.Adapter.Penthouse_swipe_activity;
+import project.revision.tap.retre.Public_Url;
 import project.revision.tap.retre.R;
 
 /**
  * Created by prakash on 8/16/2016.
  */
 public class PenthouseHimayalaView extends AppCompatActivity {
-WebView mParagraph;
+
     ImageButton mLeft,mRight;
     ViewPager mPenthouse;
-    TextView mFirst,mSecond;
+    WebView mSecond;
     Penthouse_swipe_activity penthouse_swipe_adapter;
+    static String PHVurl= Public_Url.PenthouseHimayalaView;
+    String mBody;
+    String pish = "<html><head><style type=\"text/css\">@font-face {font-family: 'Raleway';" +
+            "src: url(\"file:///android_asset/fonts/Raleway-ExtraLight.ttf\")}body {font-family: 'Raleway';font-size: medium;text-align: justify;}</style></head><body>";
+    String pas = "</body></html>";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +47,11 @@ WebView mParagraph;
         mPenthouse=(ViewPager)findViewById(R.id.penthouse_rooms);
         penthouse_swipe_adapter=new Penthouse_swipe_activity(this);
         mPenthouse.setAdapter(penthouse_swipe_adapter);
-        mFirst=(TextView)findViewById(R.id.penthouse_p1);
-        mSecond=(TextView)findViewById(R.id.penthouse_p2);
-        Typeface myTypeface=Typeface.createFromAsset(getAssets(),"Raleway-ExtraLight.ttf");
-        mFirst.setTypeface(myTypeface);
-        mSecond.setTypeface(myTypeface);
+
+        mSecond=(WebView) findViewById(R.id.penthouse_p2);
+        getApi();
+
+
 
         mLeft=(ImageButton)findViewById(R.id.left_nav);
         mRight=(ImageButton)findViewById(R.id.right_nav);
@@ -66,6 +84,75 @@ WebView mParagraph;
 
 
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
+
+    void getApi()
+    {
+        JsonObjectRequest request=new JsonObjectRequest(Request.Method.GET,PHVurl,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+
+
+
+                            JSONObject bodyObj=response.getJSONObject("body");
+                            JSONArray bodyAry=bodyObj.getJSONArray("und");
+                            for (int i=0;i<bodyAry.length();i++)
+                            {
+                                JSONObject subbodyObj=bodyAry.getJSONObject(i);
+                                mBody=subbodyObj.getString("value");
+
+                            }
+                            SharedPreferences sharedPreferences=getSharedPreferences("phv", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor=sharedPreferences.edit();
+
+                            editor.putString("body",mBody);
+                            editor.commit();
+
+
+                            String myHtmlString = pish + mBody + pas;
+
+
+
+                            mSecond.loadDataWithBaseURL(null, myHtmlString, "text/html", "UTF-8", null);
+
+
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        SharedPreferences sharedPreferences=getSharedPreferences("phv",Context.MODE_PRIVATE);
+
+                        mBody=sharedPreferences.getString("body","");
+                        String myHtmlString = pish + mBody + pas;
+                        mSecond.loadDataWithBaseURL(null, myHtmlString, "text/html", "UTF-8", null);
+
+
+                    }
+                }
+
+
+        );
+
+        RequestQueue queue= Volley.newRequestQueue(this);
+        queue.add(request);
 
     }
 }

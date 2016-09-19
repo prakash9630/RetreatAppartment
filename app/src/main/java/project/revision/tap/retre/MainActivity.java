@@ -1,6 +1,7 @@
 package project.revision.tap.retre;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,13 +15,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import java.util.Locale;
+
 import me.relex.circleindicator.CircleIndicator;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     ViewPager viewPager;
     customSwip customSwip;
-    LinearLayout mLinear1,mLinear2,mLinear3,mLinear4;
+    LinearLayout mLinear1,mLinear2,mLinear3,mLinear4,mlinear8,mLinear7,mLinear6,mLinear5;
     LinearLayout mContact,mBook;
 
 
@@ -36,8 +39,21 @@ public class MainActivity extends AppCompatActivity
         mLinear2=(LinearLayout)findViewById(R.id.linear2);
         mLinear3=(LinearLayout)findViewById(R.id.linear3);
         mLinear4=(LinearLayout)findViewById(R.id.linear4);
+        mLinear5=(LinearLayout)findViewById(R.id.linear5);
+        mlinear8=(LinearLayout)findViewById(R.id.linear8);
+        mLinear6=(LinearLayout)findViewById(R.id.linear6);
+        mLinear7=(LinearLayout)findViewById(R.id.linear7);
         mBook=(LinearLayout)findViewById(R.id.booknow);
         mContact=(LinearLayout)findViewById(R.id.contactnow);
+
+
+        mContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,Contact_Activity.class);
+                startActivity(i);
+            }
+        });
 
 
 
@@ -50,6 +66,21 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        mLinear2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,About_Us.class);
+                startActivity(i);
+            }
+        });
+        mLinear3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,MapsActivity.class);
+                startActivity(i);
+            }
+        });
+
         mLinear4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +88,36 @@ public class MainActivity extends AppCompatActivity
                 startActivity(i);
             }
         });
+        mLinear5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,Travel_activity.class);
+                startActivity(i);
+            }
+        });
 
+        mLinear6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String uri = String.format(Locale.ENGLISH, "geo:%f,%f",27.713308, 85.297986);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(intent);
+            }
+        });
+        mLinear7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,Amenities_activity.class);
+                startActivity(i);
+            }
+        });
+mlinear8.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent i=new Intent(MainActivity.this,FeedBack.class);
+        startActivity(i);
+    }
+});
 
 
 
@@ -188,6 +248,8 @@ mBook.setOnClickListener(new View.OnClickListener() {
 
         }
         else if (id == R.id.nav_feedback) {
+            Intent i=new Intent(this,FeedBack.class);
+            startActivity(i);
 
         }
 

@@ -19,7 +19,7 @@ import project.revision.tap.retre.Rooms.ValueForMoney;
  * Created by prakash on 8/8/2016.
  */
 public class customSwip extends PagerAdapter {
-    private int[] imageResource={R.drawable.penthouse,R.drawable.threebedroomhimalayaview,R.drawable.onebedroomexecutive,R.drawable.twobedroomdelux,R.drawable.valueformoney};
+    private int[] imageResource={R.drawable.penthouse,R.drawable.threebedroomhimayalaview,R.drawable.onebedroomexecutive,R.drawable.twobedroomdelux,R.drawable.valueformoney};
     private String[] mImageName={"Penthouse","3 Bedroom himalaya View","1 Bedroom Executive","2 Bedroom Deluxe","2 Bedroom Standard"};
      private Context ctx;
     private LayoutInflater layoutInflater;
