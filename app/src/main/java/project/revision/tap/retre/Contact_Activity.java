@@ -19,7 +19,7 @@ import android.widget.Toast;
  */
 public class Contact_Activity extends AppCompatActivity {
     Toolbar toolbar;
-    TextView phone,mobile,info,sales;
+    TextView phone,mobile,info;
     Button Call,Email;
     ImageButton fb,twitter,instagram;
     @Override

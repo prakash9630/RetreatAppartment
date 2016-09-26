@@ -40,5 +40,30 @@
     </string-array>
     <string name="title_activity_maps">Map</string>
 
+    <string name="kathmandu_durbar_square">KATHMANDU DURBAR SQUARE:</string>
+    <string name="kathmandu_text">Kathmandu Durbar Square is one of the popular places which are liked by many visitors due to its exquisite architecture and artistic embellishment. It includes a huge Royal Palace with different temples, inside as well as outside dating from the 15th to the 18th century. The house of the living goddess “Kumari”, the ferocious “Kal Bhairav”, the red monkey god “Hanuman” and hundreds of erotic carvings are a few examples of the sights at the square. All the woodcarvings, statues and architectures in this area are exceptionally fine.
+The Durbar Square at Basantapur is about 30 minutes’ walk or about 7 minutes’ drive from Retreat Serviced Apartments.</string>
+
+    
+    <string name="seto_gumba">SETO GUMBA (WHITE MONASTERY):</string>
+    <string name="seto_gumba_text">Seto Gumba also known as Druk Amitabh Monastery is the perfect location for a day’s hiking that’s close to Sitapaila. Situated at calm and peaceful environment at the top Seto Gumba is really a nice cultural site. You can have a perfect view of Kathmandu valley and Swayambhunath Stupa from the Gumba. It is one of the huge monasteries in Kathmandu with numerous larger than life statues of Buddha and other Buddhist deities. It is a monastery which belongs to ‘nuns’ (female monks) and is opened for general public visit on Saturdays only.
+Seto Gumba is about 4km far from the Retreat Service Apartments.</string>
+    
+    <string name="ichangu">ICHANGU NARAYAN:</string>
+    <string name="ichangu_text">Ichangu Narayan is one of the several important temples dedicated to Vishnu in his incarnation as Narayan, the ‘eternal man’. Built in the two-tiered pagoda style, the temple was founded in around 1200 and its courtyard is dotted with ancient Garuda statues and other Vaishnavite symbols. Ichangu Narayan is among the preferable hiking spots near the valley.
+Ichangu Narayan is located about 3km far from the Retreat Serviced Apartments.</string>
+    <string name="gaia">GAIA RESTAURANT AND COFFEE SHOP</string>
+<string name="gaia_text">Gaia is a renowned Restaurant specialized in Eurasian Cuisine, also offering wide selection of Breakfast, Lunch/Dinner and Light meals and Beverages. Facilitating Garden Terrace as well as Dining Hall, it also overtures Book Library. Situated in Jyatha, Thamel, it is only a few stretches North-east from Retreat Serviced Apartments.</string>
+
+<string name="le_sherpa">LE-SHERPA</string>
+    <string name="le_sherpa_text">Specialized in French, Italian and Spanish/Basque Cuisine, Le-Sherpa caters European Cuisine, and an ample choices of Wines and variety for Breakfast and Dinner. It is situated in Ramalaya, Panipokhari in Kathmandu about Five kilometers North from Retreat. </string>
+
+    <string name="roadhouse">ROADHOUSE CAFÉ</string>
+    <string name="roadhouse_text">Serving one of the Best Pizzas and Italian as well as other Continental Dishes, Roadhouse café offers all Classics Cocktails and has a very Comforting décor. It is situated in Pulchowk which is about five kilometers south from Retreat.</string>
+
+    <string name="fireandice">FIRE AND ICE PIZZERIA</string>
+    <string name="fireandice_text">Founded by the Italian chef from Naples, Fire and Ice Pizzeria serves the freshly baked Pizzas, Dessert and Coffee, along with Latin, Italian music and opera ensures heavenly times. Specialized in Italian cuisine, this place is situated in Kantipath and is about a few span East from Retreat.</string>
+    <string name="gardenofdreams">GARDEN OF DREAMS</string>
+<string name="gardenofdreams_text">Garden of Dreams is one of the best, peaceful and comforting place in the busy Valley, facilitating the visit of the Garden, event management like receptions, social gatherings and cultural programs, along with high standard Nepali and Continental Cuisine including breakfast and Dinner in the Kaiser café about the Garden. It is situated in Kantipath and is about 10 minutes ride from Retreat.</string>
 
 </resources>

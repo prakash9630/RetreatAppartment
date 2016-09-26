@@ -7,11 +7,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
-    -->
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
     <application
@@ -110,8 +106,56 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".Swyambhu_nath">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
+        </activity>
+        <activity android:name=".Kathmandu_durbar_square">
 
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
 
+        </activity>
+        <activity android:name=".Seto_gumba">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
+
+        </activity>
+        <activity android:name=".Ichangu_Narayan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
+        </activity>
+        <activity android:name=".Garden_of_dreams">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
+        </activity>
+        <activity android:name=".Le_sherpa">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
+        </activity>
+        <activity android:name=".Roadhouse_cafe">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
+        </activity>
+<activity android:name=".Fire_ice">
+
+    <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".Travel_activity" />
+</activity>
+<activity android:name=".Gaia_restaurant">
+
+    <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".Travel_activity" />
+</activity>
 
 
     </application>

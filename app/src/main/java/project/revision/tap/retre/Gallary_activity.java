@@ -18,7 +18,7 @@ public class Gallary_activity extends AppCompatActivity{
     Toolbar mToolbar;
     GridView gridView;
     Gallary_Adapter adapter;
-    int  j=0;
+
 
 
     @Override

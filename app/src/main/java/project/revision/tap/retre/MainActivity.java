@@ -1,6 +1,8 @@
 package project.revision.tap.retre;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -14,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity
     customSwip customSwip;
     LinearLayout mLinear1,mLinear2,mLinear3,mLinear4,mlinear8,mLinear7,mLinear6,mLinear5;
     LinearLayout mContact,mBook;
+    Location location;
 
 
 
@@ -45,6 +49,8 @@ public class MainActivity extends AppCompatActivity
         mLinear7=(LinearLayout)findViewById(R.id.linear7);
         mBook=(LinearLayout)findViewById(R.id.booknow);
         mContact=(LinearLayout)findViewById(R.id.contactnow);
+
+        Runtime.getRuntime().gc();
 
 
         mContact.setOnClickListener(new View.OnClickListener() {
@@ -99,9 +105,13 @@ public class MainActivity extends AppCompatActivity
         mLinear6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String uri = String.format(Locale.ENGLISH, "geo:%f,%f",27.713308, 85.297986);
+                         String uri = String.format(Locale.ENGLISH, "geo:%f,%f",27.713308, 85.297986);
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+
                 startActivity(intent);
+
+
+
             }
         });
         mLinear7.setOnClickListener(new View.OnClickListener() {
@@ -140,14 +150,7 @@ mBook.setOnClickListener(new View.OnClickListener() {
         setSupportActionBar(toolbar);
 
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
         viewPager=(ViewPager)findViewById(R.id.fragment_viewpager);
         CircleIndicator indicator = (CircleIndicator)findViewById(R.id.inciator);
 
