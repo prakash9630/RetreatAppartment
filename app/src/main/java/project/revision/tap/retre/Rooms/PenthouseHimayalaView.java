@@ -2,6 +2,7 @@ package project.revision.tap.retre.Rooms;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,6 +41,8 @@ public class PenthouseHimayalaView extends AppCompatActivity {
     String pish = "<html><head><style type=\"text/css\">@font-face {font-family: 'Raleway';" +
             "src: url(\"file:///android_asset/fonts/Raleway-ExtraLight.ttf\")}body {font-family: 'Raleway';font-size: medium;text-align: justify;}</style></head><body>";
     String pas = "</body></html>";
+    TextView night,week,month;
+    TextView title;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,6 +53,18 @@ public class PenthouseHimayalaView extends AppCompatActivity {
         mPenthouse.setAdapter(penthouse_swipe_adapter);
 
         mSecond=(WebView) findViewById(R.id.penthouse_p2);
+        night=(TextView)findViewById(R.id.night_p);
+        week=(TextView)findViewById(R.id.week_p);
+        month=(TextView)findViewById(R.id.month_p);
+        SharedPreferences preferences=getSharedPreferences("price", Context.MODE_PRIVATE);
+        night.setText(preferences.getString("p_night",""));
+        week.setText(preferences.getString("p_week",""));
+        month.setText(preferences.getString("p_month",""));
+        title=(TextView)findViewById(R.id.p_title);
+        Typeface myTypeface= Typeface.createFromAsset(getAssets(), "fonts/Raleway-ExtraLight.ttf");
+        title.setTypeface(myTypeface);
+
+
         getApi();
 
 

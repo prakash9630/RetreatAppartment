@@ -11,5 +11,6 @@ public class Public_Url {
     public static String TwoBedroomDEluxe="http://www.retreatservicedapartments.com/androidapi/v1/node/35";
     public static String TwoBedroomStandard="http://www.retreatservicedapartments.com/androidapi/v1/node/34";
     public static String Aboutus="http://www.retreatservicedapartments.com/androidapi/v1/node/31";
+    public static String Price="http://www.retreatservicedapartments.com/androidapi/v1/services-rooms-pricing";
 
 }

@@ -7,16 +7,13 @@
                 android:color="#cc1B1464"/>
 
 
-            <corners android:radius="5dp" />
+            <corners android:radius="2dp" />
+            <solid android:color="@color/white"></solid>
 
 
-            <gradient
-                android:startColor="#C8C8C8"
-                android:endColor="#FFFFFF"
-                android:type="linear"
-                android:angle="270"/>
 
-            <padding android:bottom="10dp" android:left="3dp" android:right="10dp" android:top="3dp" />
+
+            <padding android:bottom="10dp" android:left="3dp" android:right="10dp" android:top="5dp" />
         </shape></item>
         <item ><bitmap android:gravity="bottom|right" android:src="@drawable/downarrow" />   // you can use any other image here, instead of default_holo_dark_am
         </item>

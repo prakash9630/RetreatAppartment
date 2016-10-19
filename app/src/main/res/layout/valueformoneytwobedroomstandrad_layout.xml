@@ -8,15 +8,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:background="@color/thembluecolor"
         android:gravity="center"
         android:layout_height="60dp">
 
         <TextView
+            android:id="@+id/obs_title"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/valueformoney"
-            android:textSize="25dp"
+            android:textSize="23dp"
 
             />
 
@@ -25,6 +29,10 @@
 
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
     <ScrollView
@@ -42,7 +50,10 @@
 
 
 
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,16 +71,16 @@
                 </android.support.v4.view.ViewPager>
                 <ImageButton
                     android:id="@+id/left_nav"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/imagebuttonsize"
+                    android:layout_height="@dimen/imagebuttonsize"
                     android:background="#30ffffff"
                     android:layout_gravity="center_vertical|left"
                     android:src="@drawable/leftarrow" />
 
                 <ImageButton
                     android:id="@+id/right_nav"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/imagebuttonsize"
+                    android:layout_height="@dimen/imagebuttonsize"
                     android:background="#80ffffff"
                     android:layout_gravity="center_vertical|right"
                     android:src="@drawable/rightarrow" />
@@ -82,6 +93,131 @@
 
 
             </FrameLayout>
+            <LinearLayout
+                android:background="#90ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:padding="2dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:textStyle="bold"
+
+                        android:textSize="@dimen/price_text_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+                    <TextView
+                        android:textStyle="bold"
+
+                        android:textSize="@dimen/price_text_size"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/night_tbs"/>
+
+
+                    <TextView
+                        android:textStyle="bold"
+
+                        android:textSize="@dimen/price_text_size"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/night"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:textSize="@dimen/price_text_size"
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:textSize="@dimen/price_text_size"
+
+                        android:textStyle="bold"
+
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+                    <TextView
+                        android:textSize="@dimen/price_text_size"
+                        android:textStyle="bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/week_tbs"/>
+
+
+                    <TextView
+                        android:textSize="@dimen/price_text_size"
+                        android:textStyle="bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/week"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:textSize="@dimen/price_text_size"
+
+
+                    android:layout_marginRight="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView                android:textStyle="bold"
+
+                        android:textSize="@dimen/price_text_size"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+                    <TextView
+                        android:textStyle="bold"
+
+                        android:textSize="@dimen/price_text_size"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/month_tbs"/>
+
+
+                    <TextView
+                        android:textStyle="bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/month"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+</FrameLayout>
 
 
 
@@ -128,6 +264,9 @@
 
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"></LinearLayout>
 
 
 
@@ -157,5 +296,15 @@
 
 
     </ScrollView>
+
+        <Button
+            android:id="@+id/vfm_book"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:theme="@style/MyButton"
+            android:textColor="@color/white"
+            android:text="BOOK NOW"/>
+    </FrameLayout>
 
 </LinearLayout>

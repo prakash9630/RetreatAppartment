@@ -2,6 +2,7 @@ package project.revision.tap.retre.Rooms;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,6 +41,8 @@ public class ThreeBedRoomHimayalaView extends AppCompatActivity {
             "src: url(\"file:///android_asset/fonts/Raleway-ExtraLight.ttf\")}body {font-family: 'Raleway';font-size: medium;text-align: justify;}</style></head><body>";
     String pas = "</body></html>";
     static String TBHVurl= Public_Url.ThreeBedroomHimayalaView;
+    TextView night,week,month;
+    TextView title;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +55,19 @@ public class ThreeBedRoomHimayalaView extends AppCompatActivity {
         mLeft=(ImageButton)findViewById(R.id.left_nav);
         mFirst=(WebView) findViewById(R.id.threeBedroom_paragraph1);
         mSecond=(WebView) findViewById(R.id.threeBedroom_paragraph2);
-//        Typeface myTypeface= Typeface.createFromAsset(getAssets(),"Raleway-ExtraLight.ttf");
+        night=(TextView)findViewById(R.id.night_tbhv);
+        week=(TextView)findViewById(R.id.week_tbhv);
+        month=(TextView)findViewById(R.id.month_tbhv);
+        SharedPreferences preferences=getSharedPreferences("price", Context.MODE_PRIVATE);
+        night.setText(preferences.getString("tbhv_night",""));
+        week.setText(preferences.getString("tbhv_week",""));
+        month.setText(preferences.getString("tbhv_month",""));
+
+        title=(TextView)findViewById(R.id.tbhv_title);
+
+
+        Typeface myTypeface= Typeface.createFromAsset(getAssets(), "fonts/Raleway-ExtraLight.ttf");
+        title.setTypeface(myTypeface);
         getApi();
 
 
@@ -137,7 +153,7 @@ public class ThreeBedRoomHimayalaView extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         SharedPreferences sharedPreferences=getSharedPreferences("tbhv", Context.MODE_PRIVATE);
-                        subHeader_body=sharedPreferences.getString("subheader",subHeader_body);
+                        subHeader_body=sharedPreferences.getString("subheader","");
                         body=sharedPreferences.getString("body","");
 
                         String myHtmlString1 = pish + subHeader_body + pas;

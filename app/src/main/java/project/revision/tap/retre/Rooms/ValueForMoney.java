@@ -2,6 +2,7 @@ package project.revision.tap.retre.Rooms;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,6 +40,8 @@ static String TBSUrl= Public_Url.TwoBedroomStandard;
     String pish = "<html><head><style type=\"text/css\">@font-face {font-family: 'Raleway';" +
             "src: url(\"file:///android_asset/fonts/Raleway-ExtraLight.ttf\")}body {font-family: 'Raleway';font-size: medium;text-align: justify;}</style></head><body>";
     String pas = "</body></html>";
+    TextView night,week,month;
+    TextView title;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +49,23 @@ static String TBSUrl= Public_Url.TwoBedroomStandard;
         mTwobedroomstandard=(ViewPager)findViewById(R.id.twobedroomstandard_rooms);
         adapter=new TwoBedroomStandard_adapter(this);
         mTwobedroomstandard.setAdapter(adapter);
+
         mRignt=(ImageButton)findViewById(R.id.right_nav);
         mLeft=(ImageButton)findViewById(R.id.left_nav);
         mFirst=(WebView) findViewById(R.id.twoBedroomStandard_paragraph1);
         mSecond=(WebView) findViewById(R.id.twoBedroomStandard_paragraph2);
+        night=(TextView)findViewById(R.id.night_tbs);
+        week=(TextView)findViewById(R.id.week_tbs);
+        month=(TextView)findViewById(R.id.month_tbs);
+        SharedPreferences preferences=getSharedPreferences("price", Context.MODE_PRIVATE);
+        night.setText(preferences.getString("tbs_night",""));
+        week.setText(preferences.getString("tbs_week",""));
+        month.setText(preferences.getString("tbs_month",""));
+        title=(TextView)findViewById(R.id.obs_title);
+
+
+        Typeface myTypeface= Typeface.createFromAsset(getAssets(), "fonts/Raleway-ExtraLight.ttf");
+        title.setTypeface(myTypeface);
 
         getApi();
 
@@ -133,7 +150,7 @@ static String TBSUrl= Public_Url.TwoBedroomStandard;
 
 
                         SharedPreferences sharedPreferences=getSharedPreferences("tbs",Context.MODE_PRIVATE);
-                        subHeader_body=sharedPreferences.getString("subheader",subHeader_body);
+                        subHeader_body=sharedPreferences.getString("subheader","");
                         body=sharedPreferences.getString("body","");
 
                         String myHtmlString1 = pish + subHeader_body + pas;

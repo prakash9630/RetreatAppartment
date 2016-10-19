@@ -17,8 +17,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="#801B1464"
+            android:background="#905E589E"
             android:ellipsize="end"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:textAlignment="center"
             android:paddingBottom="2dp"
@@ -26,7 +27,7 @@
             android:paddingRight="2dp"
             android:paddingTop="2dp"
             android:singleLine="true"
-            android:textColor="#ededed" />
+            />
 
     </FrameLayout>
 

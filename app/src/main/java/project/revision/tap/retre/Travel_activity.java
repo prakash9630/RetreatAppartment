@@ -55,6 +55,7 @@ public class Travel_activity extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 

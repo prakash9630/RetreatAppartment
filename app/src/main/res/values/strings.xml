@@ -6,15 +6,15 @@
 
     <string name="action_settings">Settings</string>
     <string name="bookstring">Book now</string>
-    <string name="Arrival">Arrival Date :</string>
-    <string name="Departure">Departure Date :</string>
+    <string name="Arrival">Check-in-date :</string>
+    <string name="Departure">Check-out-date :</string>
     <string name="units">Units :</string>
     <string name="person">Persons :</string>
     <string name="Contact">Contact now</string>
     <string name="penthouse">Penthouse Himalaya View</string>
     <string name="threebedroomhimalayaview">3 Bedroom Himalaya View</string>
-    <string name="onebedroomexecutive">1 BedRoom Executive</string>
-    <string name="twobedroomdroomdelux">2 BedRoom Deluxe</string>
+    <string name="onebedroomexecutive">1 Bedroom Executive</string>
+    <string name="twobedroomdroomdelux">2 Bedroom Deluxe</string>
     <string name="valueformoney">2 Bedroom Standard</string>
     <string name="about_us">About us</string>
 

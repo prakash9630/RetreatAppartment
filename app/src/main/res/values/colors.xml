@@ -5,7 +5,12 @@
     <color name="colorAccent">#FF4081</color>
     <color name="toolbar">#CE1F29</color>
     <color name="cardview_grey">#F0F0F0</color>
-    <color name="thembluecolor">#cc1B1464</color>
-    <color name="roomTypebackground">#F0F0F0</color>
+    <color name="thembluecolor">#1B1464</color>
+
+    <!--<color name="thembluecolor">#2A4494</color>-->
+    <color name="roomTypebackground">#e2dbdb</color>
     <color name="black">#000000</color>
+    <color name="primarybuttoncolor">#357cce</color>
+    <color name="secondarybuttoncolor">#53a4e4</color>
+    <color name="white">#ffffff</color>
 </resources>

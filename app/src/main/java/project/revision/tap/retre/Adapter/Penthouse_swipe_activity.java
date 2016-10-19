@@ -1,11 +1,13 @@
 package project.revision.tap.retre.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import project.revision.tap.retre.R;
 
@@ -13,6 +15,7 @@ import project.revision.tap.retre.R;
  * Created by prakash on 8/16/2016.
  */
 public class Penthouse_swipe_activity extends PagerAdapter {
+
     private int penthouseRooms[]={R.drawable.penthouse,R.drawable.penthouse1,R.drawable.penthouse2,R.drawable.penthouse3,R.drawable.penthouse4};
 
     Context context;
@@ -49,6 +52,9 @@ public class Penthouse_swipe_activity extends PagerAdapter {
         View itemView=layoutInflater.inflate(R.layout.activity_custom_swip,container,false);
         final ImageView imageView=(ImageView) itemView.findViewById(R.id.swip_image);
         imageView.setImageResource(penthouseRooms[position]);
+
+
+
         container.addView(itemView);
 
 

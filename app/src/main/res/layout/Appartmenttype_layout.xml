@@ -7,6 +7,10 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/roomtype_toolbar"
         android:layout_width="match_parent"
+        android:theme="@style/ToolbarStyle"
+        android:background="@color/thembluecolor"
+        app:title="Apartments"
+        app:titleTextColor="@color/white"
         android:layout_height="wrap_content">
 
 
@@ -21,6 +25,7 @@
         >
 
 <LinearLayout
+    android:paddingBottom="10dp"
     android:gravity="center"
     android:layout_width="match_parent"
     android:weightSum="100"
@@ -65,16 +70,53 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:textSize="@dimen/Roomtype_name"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:paddingLeft="@dimen/padding_text_appartmentname"
+                    android:paddingRight="@dimen/padding_text_appartmentname"
+
                     android:paddingTop="@dimen/paddingofrooms"
                     android:paddingBottom="@dimen/paddingofrooms"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/penthouse"/>
+
+                <LinearLayout
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+
+
+                <TextView
+                    android:id="@+id/ap_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dolor"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/night"/>
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -116,9 +158,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:paddingLeft="@dimen/padding_text_appartmentname"
+                    android:paddingRight="@dimen/padding_text_appartmentname"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:textSize="@dimen/Roomtype_name"
                     android:paddingTop="@dimen/paddingofrooms"
                     android:paddingBottom="@dimen/paddingofrooms"
@@ -126,6 +173,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/threebedroomhimalayaview"/>
+
+                <LinearLayout
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+
+
+                    <TextView
+                        android:id="@+id/atbhv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dolor"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/night"/>
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -166,9 +243,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:paddingLeft="@dimen/padding_text_appartmentname"
+                    android:paddingRight="@dimen/padding_text_appartmentname"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:textSize="@dimen/Roomtype_name"
                     android:paddingTop="@dimen/paddingofrooms"
                     android:paddingBottom="@dimen/paddingofrooms"
@@ -176,6 +258,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/valueformoney"/>
+
+
+                <LinearLayout
+
+                    android:gravity="center"
+                    android:paddingBottom="6dp"
+
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+
+
+                    <TextView
+                        android:id="@+id/atbs_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dolor"
+
+                        android:layout_gravity="center"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/night"/>
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -243,9 +359,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:paddingLeft="@dimen/padding_text_appartmentname"
+                    android:paddingRight="@dimen/padding_text_appartmentname"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:textSize="@dimen/Roomtype_name"
                     android:paddingTop="@dimen/paddingofrooms"
                     android:paddingBottom="@dimen/paddingofrooms"
@@ -253,6 +374,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/onebedroomexecutive"/>
+
+                <LinearLayout
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+
+
+                    <TextView
+                        android:id="@+id/aobe_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dolor"
+
+                        android:layout_gravity="center"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/night"/>
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -292,9 +444,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:paddingLeft="@dimen/padding_text_appartmentname"
+                    android:paddingRight="@dimen/padding_text_appartmentname"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:textSize="@dimen/Roomtype_name"
                     android:paddingTop="@dimen/paddingofrooms"
                     android:paddingBottom="@dimen/paddingofrooms"
@@ -302,6 +459,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/twobedroomdroomdelux"/>
+
+
+                <LinearLayout
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+
+
+
+                    <TextView
+                        android:id="@+id/atbd_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dolor"
+
+                        android:layout_gravity="center"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/night"/>
+
+
+                </LinearLayout>
 
 
             </LinearLayout>

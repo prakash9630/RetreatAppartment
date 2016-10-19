@@ -9,41 +9,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/contact_toolbar"
+        app:title="Contact"
+        android:theme="@style/ToolbarStyle"
+        app:titleTextColor="@color/white"
+        android:background="@color/thembluecolor"
         ></android.support.v7.widget.Toolbar>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
-        >
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:id="@+id/contact_cardview"
-            app:cardElevation="5dp"
-            android:layout_height="wrap_content">
+
+
             <ScrollView
                 android:layout_width="match_parent"
+                android:fillViewport="true"
                 android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center"
-                android:padding="5dp">
+                android:weightSum="100"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="75">
+
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitXY"
+
+                    android:src="@drawable/contact"/>
+
                 <TextView
                     android:textAlignment="center"
                     android:id="@+id/place_id"
                     android:textColor="@color/thembluecolor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                   android:textSize="18dp"
-                    android:padding="10dp"
+
+                    android:padding="5dp"
                     android:text="Swyambhu Marg, Kathmandu, Nepal"/>
                 <TextView
                     android:textColor="@color/thembluecolor"
@@ -51,8 +59,8 @@
                     android:id="@+id/ph_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:padding="10dp"
+
+                    android:paddingTop="5dp"
                     android:text="+977 (01) 427 4837"/>
 
                 <TextView
@@ -61,13 +69,13 @@
                     android:id="@+id/mobile_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:padding="10dp"
+
+                    android:paddingBottom="5dp"
                     android:text="+977 980 109 8941"/>
                 <LinearLayout
 
                     android:layout_width="match_parent"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_height="wrap_content">
@@ -77,7 +85,7 @@
                         android:id="@+id/generalenquiry"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18dp"
+
                         android:text="For general enquiries: "/>
                     <TextView
                         android:textColor="@color/thembluecolor"
@@ -85,15 +93,44 @@
                         android:id="@+id/link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18dp"
+
                         android:autoLink="web"
                         android:layout_centerInParent="true"
                         android:linksClickable="true"
                         android:text="info@retreatapartment.com "/>
 
                 </LinearLayout>
-                <LinearLayout
-                    android:padding="10dp"
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/thembluecolor"
+
+                            android:id="@+id/salesenquiry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="For sales enquiries: "/>
+                        <TextView
+                            android:textColor="@color/thembluecolor"
+
+                            android:id="@+id/link_sales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:autoLink="web"
+                            android:layout_centerInParent="true"
+                            android:linksClickable="true"
+                            android:text="sales@retreatapartment.com "/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                    android:padding="8dp"
                 android:layout_width="match_parent"
                     android:gravity="center"
                 android:layout_height="wrap_content">
@@ -101,21 +138,103 @@
                     android:layout_width="100dp"
                     android:id="@+id/call_btn"
                     android:text="call"
+                    android:drawableLeft="@drawable/telephone"
                     android:textColor="#ffffff"
-                    android:background="@drawable/button_shape"
+                 android:theme="@style/MyButton"
                     android:layout_height="50dp" />
 
                     <Button
                         android:id="@+id/email_btn"
-                        android:background="@drawable/button_shape"
-                        android:layout_marginLeft="10dp"
+                        android:drawableLeft="@drawable/mail"
+                        android:layout_marginLeft="20dp"
                         android:layout_width="100dp"
                         android:text="Email"
+                        android:theme="@style/MyButton"
+
                         android:textColor="#ffffff"
                         android:layout_height="50dp" />
 
 
+
+
+
             </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@color/primarybuttoncolor"
+                    android:layout_weight="25">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAlignment="center"
+    android:textStyle="bold"
+    android:text="FOLLOW US ON SOCIAL MEDIA"
+    android:textColor="@color/white"
+    />
+
+                    <LinearLayout
+                        android:paddingTop="10dp"
+
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                       <ImageView
+                           android:id="@+id/fb_icon"
+                           android:padding="1dp"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:src="@mipmap/fb"/>
+                        <ImageView
+                            android:id="@+id/twiter_icon"
+                            android:padding="1dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/t"/>
+                        <ImageView
+                            android:id="@+id/gplus_icon"
+                            android:padding="1dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/gplus"/>
+                        <ImageView
+                            android:id="@+id/youtube_icon"
+                            android:padding="1dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/youtube"/>
+                        <ImageView
+                            android:id="@+id/insta_icon"
+                            android:padding="1dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/i"/>
+                        <ImageView
+                            android:id="@+id/p_icond"
+                            android:padding="1dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/p"/>
+
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
 
 
 
@@ -129,48 +248,14 @@
             </ScrollView>
 
 
-        </android.support.v7.widget.CardView>
 
 
 
-        <android.support.v7.widget.CardView
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            app:cardElevation="5dp"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/fb_icon"
-                android:layout_width="wrap_content"
-                android:src="@mipmap/fb"
-                android:padding="10dp"
-                android:layout_height="wrap_content" />
-            <ImageButton
-                android:id="@+id/insta_icon"
-                android:layout_width="wrap_content"
-                android:src="@mipmap/insta"
-                android:padding="10dp"
-                android:layout_height="wrap_content" />
-            <ImageButton
-                android:id="@+id/twiter_icon"
-                android:layout_width="wrap_content"
-                android:src="@mipmap/twiter"
-                android:padding="10dp"
-                android:layout_height="wrap_content" />
-            </LinearLayout>
 
 
-
-        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
 
 
 
-</LinearLayout>

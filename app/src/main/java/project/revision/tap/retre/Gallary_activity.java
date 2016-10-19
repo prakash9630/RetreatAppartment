@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import project.revision.tap.retre.Adapter.Gallary_Adapter;
+import project.revision.tap.retre.Adapter.ImagePagerAdapter;
 
 /**
  * Created by prakash on 8/23/2016.
@@ -47,7 +48,7 @@ public class Gallary_activity extends AppCompatActivity{
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent ii=new Intent(getApplicationContext(),Fullimage_activity.class);
+                Intent ii=new Intent(getApplicationContext(),ImageViewPager.class);
                 ii.putExtra("id",position);
                 startActivity(ii);
             }

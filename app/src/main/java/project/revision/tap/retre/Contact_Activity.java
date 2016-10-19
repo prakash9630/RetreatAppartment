@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +22,7 @@ public class Contact_Activity extends AppCompatActivity {
     Toolbar toolbar;
     TextView phone,mobile,info;
     Button Call,Email;
-    ImageButton fb,twitter,instagram;
+    ImageView fb,twitter,instagram,gplus,youtube,p;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +38,13 @@ public class Contact_Activity extends AppCompatActivity {
         Call=(Button)findViewById(R.id.call_btn);
         Email=(Button)findViewById(R.id.email_btn);
         info=(TextView)findViewById(R.id.link);
-        fb=(ImageButton)findViewById(R.id.fb_icon);
-        twitter=(ImageButton)findViewById(R.id.twiter_icon);
-        instagram=(ImageButton)findViewById(R.id.insta_icon);
+        fb=(ImageView) findViewById(R.id.fb_icon);
+        twitter=(ImageView) findViewById(R.id.twiter_icon);
+        gplus=(ImageView) findViewById(R.id.gplus_icon);
+        youtube=(ImageView) findViewById(R.id.youtube_icon);
+        p=(ImageView) findViewById(R.id.p_icond);
+        instagram=(ImageView)findViewById(R.id.insta_icon);
+
 
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +69,31 @@ public class Contact_Activity extends AppCompatActivity {
 
             }
         });
+        p.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.pinterest.com/retreatserviced/"));
+                startActivity(intent);
+
+            }
+        });
+        gplus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/u/0/+RetreatKathmandu/"));
+                startActivity(intent);
+
+            }
+        });
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UC2Wh76L9BkMWzKjw9KfAjJg"));
+                startActivity(intent);
+
+            }
+        });
+
 
 
         phone.setOnClickListener(new View.OnClickListener() {

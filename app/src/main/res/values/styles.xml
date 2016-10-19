@@ -21,4 +21,18 @@
         <item name="colorAccent">@color/thembluecolor</item>
     </style>
 
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/secondarybuttoncolor</item>
+        <item name="colorButtonNormal">@color/primarybuttoncolor</item>
+    </style>
+    <style name="MyButtonsignup" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/secondarybuttoncolor</item>
+        <item name="colorButtonNormal">@color/thembluecolor</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
 </resources>

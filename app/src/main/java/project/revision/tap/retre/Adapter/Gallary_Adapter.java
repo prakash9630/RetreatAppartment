@@ -17,8 +17,8 @@ public class Gallary_Adapter extends BaseAdapter {
 
 
     public int[] images={R.drawable.penthouse,R.drawable.penthouse1,R.drawable.penthouse2,R.drawable.penthouse3,R.drawable.penthouse4,R.drawable.onebedroomexecutive,
-                          R.drawable.onebedroomexecutive1,R.drawable.onebedroomexecutive2,R.drawable.onebedroomexecutive3,R.drawable.twobedroomstandard1,R.drawable.twobedroomstandard2,R.drawable.twobedroomstandard3,
-            R.drawable.twobedroomdelux1,R.drawable.twobedroomdelux2,R.drawable.twobedroomdelux3};
+                          R.drawable.onebedroomexecutive2,R.drawable.onebedroomexecutive3,R.drawable.twobedroomstandard1,R.drawable.twobedroomstandard2,R.drawable.twobedroomstandard3,
+            R.drawable.twobedroomdelux1,R.drawable.twobedroomdelux2};
 
     public Gallary_Adapter(Context c) {
         context=c;
@@ -40,15 +40,29 @@ public class Gallary_Adapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
 
-        ImageView imageView=new ImageView(context);
+        ImageView imageView;
+        if (view == null) {  // if it's not recycled, initialize some attributes
+            imageView = new ImageView(context);
+            imageView.setAdjustViewBounds(true);
+            int size_width=(int)context.getResources().getDimension(R.dimen.image_size_width);
+            int size_height=(int)context.getResources().getDimension(R.dimen.image_size_heignt);
+
+//
+            imageView.setLayoutParams(new GridView.LayoutParams(size_width,size_height));
+//            imageView.setAdjustViewBounds(true);
+
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(5,5,5,5);
+        } else {
+            imageView = (ImageView) view;
+        }
+
         imageView.setImageResource(images[position]);
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setLayoutParams(new GridView.LayoutParams(149,110));
-
 
         return imageView;
     }
+
 
 }

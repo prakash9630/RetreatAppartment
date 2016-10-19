@@ -107,6 +107,15 @@ public class Booking extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
+                    if (mArrive.length()<1)
+                    {
+                        Toast.makeText(Booking.this, "Please enter arrival date", Toast.LENGTH_SHORT).show();
+                    }
+                    if(mDeparture.length()<1)
+                    {
+                        Toast.makeText(Booking.this, "Please enter departure date", Toast.LENGTH_SHORT).show();
+                    }
+
 
                     Arrive = mArrive.getText().toString();
                     departure = mDeparture.getText().toString();
