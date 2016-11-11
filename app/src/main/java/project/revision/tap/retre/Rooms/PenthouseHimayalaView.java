@@ -1,6 +1,7 @@
 package project.revision.tap.retre.Rooms;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import project.revision.tap.retre.Adapter.Penthouse_swipe_activity;
+import project.revision.tap.retre.Booking;
 import project.revision.tap.retre.Public_Url;
 import project.revision.tap.retre.R;
 
@@ -43,6 +46,7 @@ public class PenthouseHimayalaView extends AppCompatActivity {
     String pas = "</body></html>";
     TextView night,week,month;
     TextView title;
+    Button mBookbtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +60,16 @@ public class PenthouseHimayalaView extends AppCompatActivity {
         night=(TextView)findViewById(R.id.night_p);
         week=(TextView)findViewById(R.id.week_p);
         month=(TextView)findViewById(R.id.month_p);
+        mBookbtn=(Button)findViewById(R.id.phv_book);
+        mBookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(PenthouseHimayalaView.this,Booking.class);
+                i.putExtra("book","penthouse_himalaya_view");
+                i.putExtra("unit_name","PENTHOUSE HIMALAYA VIEW");
+                startActivity(i);
+            }
+        });
         SharedPreferences preferences=getSharedPreferences("price", Context.MODE_PRIVATE);
         night.setText(preferences.getString("p_night",""));
         week.setText(preferences.getString("p_week",""));

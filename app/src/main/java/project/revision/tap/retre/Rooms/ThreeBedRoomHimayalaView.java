@@ -1,6 +1,7 @@
 package project.revision.tap.retre.Rooms;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import project.revision.tap.retre.Adapter.ThreeBedroomHimalayaView_adapter;
+import project.revision.tap.retre.Booking;
 import project.revision.tap.retre.Public_Url;
 import project.revision.tap.retre.R;
 
@@ -43,6 +46,7 @@ public class ThreeBedRoomHimayalaView extends AppCompatActivity {
     static String TBHVurl= Public_Url.ThreeBedroomHimayalaView;
     TextView night,week,month;
     TextView title;
+    Button mBookbtn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +62,16 @@ public class ThreeBedRoomHimayalaView extends AppCompatActivity {
         night=(TextView)findViewById(R.id.night_tbhv);
         week=(TextView)findViewById(R.id.week_tbhv);
         month=(TextView)findViewById(R.id.month_tbhv);
+        mBookbtn=(Button)findViewById(R.id.tbhv_book);
+        mBookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(ThreeBedRoomHimayalaView.this,Booking.class);
+                i.putExtra("book","3_bedroom_himalaya_view");
+                i.putExtra("unit_name","3 BEDROOM HIMALAYA VIEW");
+                startActivity(i);
+            }
+        });
         SharedPreferences preferences=getSharedPreferences("price", Context.MODE_PRIVATE);
         night.setText(preferences.getString("tbhv_night",""));
         week.setText(preferences.getString("tbhv_week",""));

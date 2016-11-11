@@ -90,7 +90,7 @@
 
 
             <Button
-                android:id="@+id/login"
+                android:id="@+id/signup_page_id"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:text="Sign up"

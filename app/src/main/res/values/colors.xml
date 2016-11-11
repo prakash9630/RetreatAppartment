@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="toolbar">#CE1F29</color>
-    <color name="cardview_grey">#F0F0F0</color>
+    <color name="cardview_grey">#E5E8FF</color>
     <color name="thembluecolor">#1B1464</color>
 
     <!--<color name="thembluecolor">#2A4494</color>-->

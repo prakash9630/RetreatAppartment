@@ -13,7 +13,7 @@ import project.revision.tap.retre.Rooms.OneBedroomExecutive;
 import project.revision.tap.retre.Rooms.PenthouseHimayalaView;
 import project.revision.tap.retre.Rooms.ThreeBedRoomHimayalaView;
 import project.revision.tap.retre.Rooms.TwoBedRoomDeluxe;
-import project.revision.tap.retre.Rooms.ValueForMoney;
+import project.revision.tap.retre.Rooms.TwoBedroomStandard;
 
 /**
  * Created by prakash on 8/8/2016.
@@ -73,7 +73,7 @@ public class customSwip extends PagerAdapter {
                 }
                 if(position==4)
                 {
-                    Intent i=new Intent(ctx, ValueForMoney.class);
+                    Intent i=new Intent(ctx, TwoBedroomStandard.class);
                     ctx.startActivity(i);
                 }
             }

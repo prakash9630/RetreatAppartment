@@ -23,4 +23,7 @@
     <dimen name="image_size_heignt">90dp</dimen>
     <dimen name="top_margin_signup_edittext">10dp</dimen>
     <dimen name="height_places">280dp</dimen>
+    <dimen name="textSizeOfCheckout">20dp</dimen>
+    <dimen name="checkoutedttextheight">40dp</dimen>
+    <dimen name="chekoutmargin">8dp</dimen>
 </resources>

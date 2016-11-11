@@ -36,7 +36,7 @@
         <activity android:name=".Rooms.PenthouseHimayalaView" />
         <activity android:name=".Rooms.ThreeBedRoomHimayalaView" />
         <activity android:name=".Rooms.TwoBedRoomDeluxe" />
-        <activity android:name=".Rooms.ValueForMoney" />
+        <activity android:name=".Rooms.TwoBedroomStandard" />
         <activity
             android:name=".About_Us"
             >
@@ -44,9 +44,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity
-            android:name=".Booking"
-            >
+        <activity android:name=".Booking">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -158,6 +156,15 @@
 
 
 <activity android:name=".Login_form"></activity>
+        <activity android:name=".Available_rooms">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Booking" />
+
+        </activity>
+        <activity android:name=".Checkout">
+
+        </activity>
     </application>
 
 </manifest>

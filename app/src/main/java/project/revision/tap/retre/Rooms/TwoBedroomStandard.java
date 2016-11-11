@@ -1,6 +1,7 @@
 package project.revision.tap.retre.Rooms;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -24,13 +26,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import project.revision.tap.retre.Adapter.TwoBedroomStandard_adapter;
+import project.revision.tap.retre.Booking;
 import project.revision.tap.retre.Public_Url;
 import project.revision.tap.retre.R;
 
 /**
  * Created by prakash on 8/16/2016.
  */
-public class ValueForMoney extends AppCompatActivity{
+public class TwoBedroomStandard extends AppCompatActivity{
     ViewPager mTwobedroomstandard;
     TwoBedroomStandard_adapter adapter;
     ImageButton mRignt,mLeft;
@@ -42,6 +45,7 @@ static String TBSUrl= Public_Url.TwoBedroomStandard;
     String pas = "</body></html>";
     TextView night,week,month;
     TextView title;
+    Button mBookbtn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +66,17 @@ static String TBSUrl= Public_Url.TwoBedroomStandard;
         week.setText(preferences.getString("tbs_week",""));
         month.setText(preferences.getString("tbs_month",""));
         title=(TextView)findViewById(R.id.obs_title);
+        mBookbtn=(Button)findViewById(R.id.vfm_book);
+        mBookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(TwoBedroomStandard.this, Booking.class);
+                i.putExtra("book","2_bedroom_standard");
+                i.putExtra("unit_name","2 BEDROOM STANDARD");
+
+                startActivity(i);
+            }
+        });
 
 
         Typeface myTypeface= Typeface.createFromAsset(getAssets(), "fonts/Raleway-ExtraLight.ttf");

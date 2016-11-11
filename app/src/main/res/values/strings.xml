@@ -38,6 +38,18 @@
 
 
     </string-array>
+    <string-array name="UnitType">
+        <item>---- Any ----</item>
+        <item>1 Bedroom Executive</item>
+        <item>Penthouse Himalaya View</item>
+        <item>Three Bedroom Himalaya View</item>
+        <item>Two Bedroom Deluxe</item>
+        <item>Two Bedroom Standard</item>
+
+
+
+    </string-array>
+
     <string name="title_activity_maps">Map</string>
 
     <string name="kathmandu_durbar_square">KATHMANDU DURBAR SQUARE:</string>

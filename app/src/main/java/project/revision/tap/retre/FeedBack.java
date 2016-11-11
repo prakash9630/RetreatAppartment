@@ -1,5 +1,6 @@
 package project.revision.tap.retre;
 
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,7 @@ public class FeedBack extends AppCompatActivity {
     Toolbar toolbar;
     EditText mName,mEmail,mMessage;
     Button mSent;
+    String possibleEmail;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +39,15 @@ public class FeedBack extends AppCompatActivity {
 
         mName=(EditText)findViewById(R.id.feedback_name);
         mEmail=(EditText)findViewById(R.id.feedback_email);
+
+        Pattern emailPattern = Patterns.EMAIL_ADDRESS; // API level 8+
+        android.accounts.Account[] accounts = AccountManager.get(getBaseContext()).getAccounts();
+        for (android.accounts.Account account : accounts) {
+            if (emailPattern.matcher(account.name).matches()) {
+                 possibleEmail = account.name;
+            }
+        }
+        mEmail.setText(possibleEmail);
         mMessage=(EditText)findViewById(R.id.feedback_message);
         mSent=(Button)findViewById(R.id.feedback_send);
 

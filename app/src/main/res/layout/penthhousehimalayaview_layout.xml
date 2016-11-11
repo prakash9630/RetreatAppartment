@@ -15,6 +15,7 @@
 
         <TextView
             android:id="@+id/p_title"
+            android:ellipsize="end"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textAlignment="center"

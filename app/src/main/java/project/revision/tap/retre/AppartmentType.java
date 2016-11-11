@@ -10,26 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 import project.revision.tap.retre.Rooms.OneBedroomExecutive;
 import project.revision.tap.retre.Rooms.PenthouseHimayalaView;
 import project.revision.tap.retre.Rooms.ThreeBedRoomHimayalaView;
 import project.revision.tap.retre.Rooms.TwoBedRoomDeluxe;
-import project.revision.tap.retre.Rooms.ValueForMoney;
+import project.revision.tap.retre.Rooms.TwoBedroomStandard;
 
 /**
  * Created by prakash on 8/11/2016.
@@ -91,7 +77,7 @@ penthouse=(LinearLayout)findViewById(R.id.penthouse_layout);
         twobedroomstandard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ts=new Intent(AppartmentType.this, ValueForMoney.class);
+                Intent ts=new Intent(AppartmentType.this, TwoBedroomStandard.class);
                 startActivity(ts);
             }
         });
