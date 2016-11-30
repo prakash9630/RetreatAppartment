@@ -93,7 +93,7 @@ public class Available_rooms extends AppCompatActivity {
 mUnitname=getIntent().getStringExtra("unit_name");
 
 
-//        roomType = getIntent().getStringExtra("mtype");
+
 
         mLinearlayout=new LinearLayoutManager(this);
         parameterString="?type="+roomType+"&"
@@ -223,7 +223,7 @@ arrayRoom=new ArrayList<>();
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Available_rooms.this,error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Available_rooms.this,"Something went wrong", Toast.LENGTH_SHORT).show();
                 pDilog.dismiss();
 
             }

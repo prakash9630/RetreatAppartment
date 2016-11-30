@@ -4,6 +4,9 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
@@ -37,14 +40,16 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
     TextView mFirstunit,mUnitType,mUnittypename;
     EditText mArrive,mDeparture;
     Spinner mUnit;
-    ArrayAdapter Unitarray,Personarray,UnitTypes;
+    ArrayAdapter Unitarray,Personarray;
     String Arrive,departure,currentdate;
     Button mCheck;
     Calendar myCalendar = Calendar.getInstance();
-    LinearLayout mUnit1,mUnit2,mUnit3,Unit_typelayout;
+    LinearLayout mUnit1,mUnit2,mUnit3;
     Spinner mUnitone,mUnittwo,mUnitthree;
 
     String mType,mUnitname;
+    TextView checkin,checkout,textunit,textperson,unittwo,unitthree,unitperson;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,10 +65,34 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
         mUnittwo=(Spinner)findViewById(R.id.spinner_person2);
         mUnitthree=(Spinner)findViewById(R.id.spinner_person3);
    mFirstunit=(TextView)findViewById(R.id.first_unit);
-//        Unit_typelayout=(LinearLayout)findViewById(R.id.type_layout);
+        unitperson=(TextView)findViewById(R.id.textPerson);
 
-//        mUnitType=(TextView)findViewById(R.id.type_hint);
-//        mUnitTypename=(Spinner)findViewById(R.id.Unit_type);
+        Typeface face = Typeface.createFromAsset(getAssets(),
+                "fonts/Raleway-ExtraLight.ttf");
+
+        checkin=(TextView)findViewById(R.id.checkin);
+        checkout=(TextView)findViewById(R.id.checkout);
+        textunit=(TextView)findViewById(R.id.textUnit);
+
+        textperson=(TextView)findViewById(R.id.textPerson);
+
+
+        unittwo=(TextView)findViewById(R.id.textunittwo);
+
+        unitthree=(TextView)findViewById(R.id.textunitthree);
+
+        checkin.setTypeface(face);
+        checkout.setTypeface(face);
+        textunit.setTypeface(face);
+        mFirstunit.setTypeface(face);
+        unittwo.setTypeface(face);
+        unitthree.setTypeface(face);
+        textperson.setTypeface(face);
+
+
+
+
+
 
         mCheck=(Button)findViewById(R.id.check);
         Unitarray = ArrayAdapter.createFromResource(this, R.array.Units, android.R.layout.simple_spinner_item);
@@ -83,37 +112,6 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
         {
             mUnittypename.setVisibility(View.GONE);
         }
-//        if (mType=="1_bedroom_executive")
-//        {
-//            Toast.makeText(Booking.this, "OneBedRoomExecutive", Toast.LENGTH_SHORT).show();
-//        }
-//        if (mType==null)
-//        {
-//            mType="All";
-//        }
-//        if (mType=="2_bedroom_deluxe")
-//        {
-//            Toast.makeText(Booking.this, "twobedroomdelux", Toast.LENGTH_SHORT).show();
-//
-//        }
-//        if (mType=="penthouse_himalaya_view")
-//        {
-//            Toast.makeText(Booking.this, "Penthouse", Toast.LENGTH_SHORT).show();
-//
-//        }
-//        if (mType=="3_bedroom_himalaya_view")
-//        {
-//            Toast.makeText(Booking.this, "three bedroom", Toast.LENGTH_SHORT).show();
-//
-//        }
-//        if (mType=="2_bedroom_standard")
-//        {
-//            Toast.makeText(Booking.this, "value for money", Toast.LENGTH_SHORT).show();
-//
-//        }
-
-
-
 
 
 
@@ -132,9 +130,7 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
         mUnitone.setAdapter(Personarray);
         mUnittwo.setAdapter(Personarray);
         mUnitthree.setAdapter(Personarray);
-//        UnitTypes = ArrayAdapter.createFromResource(this, R.array.UnitType, android.R.layout.simple_spinner_item);
-//        UnitTypes.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
-//        mUnitTypename.setAdapter(UnitTypes);
+
 
 
 
@@ -240,12 +236,17 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
 
 
 
+                             if (isOnline()) {
 
 
+                                 Arrive = mArrive.getText().toString();
+                                 departure = mDeparture.getText().toString();
+                                 isDateAfter(Arrive, departure, currentdate);
+                             }else
+                             {
 
-                        Arrive = mArrive.getText().toString();
-                    departure = mDeparture.getText().toString();
-                   isDateAfter(Arrive,departure,currentdate);
+                                 Toast.makeText(Booking.this,"No internet connection", Toast.LENGTH_SHORT).show();
+                             }
                 }}
             });
 
@@ -261,50 +262,20 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
 
     }
 
-//    void chooseUnit()
-//    {
-//
-//        if (mUnitTypename.getSelectedItem()=="---- Any ----")
-//        {
-//
-//            mType="All";
-//        }
-//        else if (mUnitTypename.getSelectedItem()=="1 Bedroom Executive")
-//        {
-//            mType="1_bedroom_executive";
-//            mUnitname="1 BEDROOM EXECUTIVE";
-//
-//        }
-//        else if (mUnitTypename.getSelectedItem()=="Two Bedroom Standard")
-//        {
-//            mType="2_bedroom_standard";
-//            mUnitname="2 BEDROOM STANDARD";
-//        }
-//
-//        else if (mUnitTypename.getSelectedItem()=="Penthouse Himalaya View")
-//        {
-//            mType="penthouse_himalaya_view";
-//            mUnitname="PENTHOUSE HIMALAYA VIEW";
-//        }
-//
-//        else if (mUnitTypename.getSelectedItem()=="Three Bedroom Himalaya View")
-//        {
-//            mType="3_bedroom_himalaya_view";
-//            mUnitname="3 BEDROOM HIMALAYA VIEW";
-//        }
-//
-//        else if (mUnitTypename.getSelectedItem()=="Two Bedroom Deluxe")
-//        {
-//            mType="2_bedroom_deluxe";
-//            mUnitname="2 BEDROOM DELUXE";
-//        }
-//
-//    }
 
 
 
 
 
+    protected boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnected()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     void isDateAfter(String arrive,String departure,String current)
@@ -322,7 +293,7 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
                 Toast.makeText(Booking.this, "Check your arrival date correctly", Toast.LENGTH_SHORT).show();
             else if(date1.after(startingDate))
             {
-//                Toast.makeText(Booking.this, "Date is accurate", Toast.LENGTH_SHORT).show();
+
 
                 Intent i=new Intent(this,Available_rooms.class);
 

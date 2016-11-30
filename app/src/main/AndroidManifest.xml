@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
     <application
@@ -17,8 +17,12 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:name="android.support.multidex.MultiDexApplication"
+        android:name=".Chat.Chat_activity"
+
         android:theme="@style/AppTheme">
+
+        <!--android:name="android.support.multidex.MultiDexApplication"-->
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -92,9 +96,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
         <activity android:name=".Travel_activity">
 
             <meta-data
@@ -155,16 +156,38 @@
         <activity android:name=".Sign_up"></activity>
 
 
-<activity android:name=".Login_form"></activity>
+<activity android:name=".Login_form">
+
+    <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".MainActivity" />
+
+</activity>
         <activity android:name=".Available_rooms">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Booking" />
 
         </activity>
+        <activity android:name=".Order">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Checkout" />
+        </activity>
+
         <activity android:name=".Checkout">
 
         </activity>
+        <activity android:name=".ResetPassword">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Login_form" />
+
+
+        </activity>
+
+        <activity android:name=".Chat.Chat_start"></activity>
     </application>
 
 </manifest>

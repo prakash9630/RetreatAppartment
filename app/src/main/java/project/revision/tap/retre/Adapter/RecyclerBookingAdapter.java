@@ -16,18 +16,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import project.revision.tap.retre.Checkout;
-import project.revision.tap.retre.Contact_Activity;
+
 import project.revision.tap.retre.Pojo.Available_rooms_getter;
 import project.revision.tap.retre.R;
 
@@ -89,13 +84,20 @@ public class RecyclerBookingAdapter extends RecyclerView.Adapter<BookingHolder> 
         holder.Unit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String no_of_unit=holder.unit_no.getSelectedItem().toString();
+                
+                if (holder.unit_no.getSelectedItem().equals("0"))
+                {
+                    Toast.makeText(context, "Please select a unit in order to continue with booking.", Toast.LENGTH_SHORT).show();
+                }else {
 
                     Intent i=new Intent(context,Checkout.class);
                 i.putExtra("Unit_Type",current.getApartmentName());
                 i.putExtra("Unit_Price",""+current.getBookingPrice());
+                    i.putExtra("Unit_no",no_of_unit);
                     context.startActivity(i);
 
-            }
+            }}
         });
 
 

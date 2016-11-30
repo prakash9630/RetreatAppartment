@@ -15,5 +15,6 @@ public class Public_Url {
 
 
     public static  String LoginUrl="https://www.retreatservicedapartments.com/androidapi/v1/user/login";
+    public static  String PasswordReset="https://www.retreatservicedapartments.com/androidapi/v1/user/request_new_password";
 
 }

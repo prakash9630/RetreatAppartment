@@ -274,100 +274,98 @@ android:weightSum="100"
 
 
                                 <LinearLayout
-                                    android:id="@+id/third_linearlayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="150dp"
-                                    android:orientation="horizontal"
-                                    android:gravity="center"
-                                    android:weightSum="1">
+                            android:id="@+id/third_linearlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:weightSum="1">
 
-                                        <android.support.v7.widget.CardView
-                                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                            android:layout_width="0dp"
-                                            android:id="@+id/card_view5"
-                                            android:elevation="20dp"
-                                            card_view:cardBackgroundColor="@color/cardview_grey"
+                                <android.support.v7.widget.CardView
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="0dp"
+                                    android:id="@+id/card_view5"
+                                    android:elevation="20dp"
+                                    card_view:cardBackgroundColor="@color/cardview_grey"
 
-                                            android:layout_marginRight="10dp"
-                                            android:layout_weight=".4"
-                                            android:layout_marginBottom="@dimen/card_view_margintop"
-                                            android:layout_marginTop="@dimen/card_view_margintop"
-                                            android:layout_height="@dimen/card_view_height">
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight=".4"
+                                    android:layout_marginBottom="@dimen/card_view_margintop"
+                                    android:layout_marginTop="@dimen/card_view_margintop"
+                                    android:layout_height="@dimen/card_view_height">
 
-                                                <LinearLayout
-                                                    android:id="@+id/linear5"
-                                                    android:background="@drawable/hoover"
+                                        <LinearLayout
+                                            android:id="@+id/linear5"
+                                            android:background="@drawable/hoover"
 
-                                                    android:layout_width="match_parent"
-                                                    android:orientation="vertical"
-                                                    android:gravity="center"
-                                                    android:layout_height="match_parent">
+                                            android:layout_width="match_parent"
+                                            android:orientation="vertical"
+                                            android:gravity="center"
+                                            android:layout_height="match_parent">
 
-                                                        <ImageView
-                                                            android:layout_width="wrap_content"
-                                                            android:layout_height="wrap_content"
-                                                            android:src="@drawable/travel"/>
+                                                <ImageView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:src="@drawable/travel"/>
 
-                                                        <TextView
-                                                            android:layout_width="wrap_content"
-                                                            android:layout_height="wrap_content"
-                                                            android:text="Travel"
-                                                            android:textStyle="bold"
-                                                            android:textColor="@color/thembluecolor"/>
-
-
-
-                                                </LinearLayout>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Travel"
+                                                    android:textStyle="bold"
+                                                    android:textColor="@color/thembluecolor"/>
 
 
 
-                                        </android.support.v7.widget.CardView>
+                                        </LinearLayout>
 
 
 
-                                        <android.support.v7.widget.CardView
-                                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                            android:layout_width="0dp"
-                                            android:id="@+id/card_view6"
-                                            android:elevation="20dp"
-                                            android:layout_marginBottom="@dimen/card_view_margintop"
-                                            card_view:cardBackgroundColor="@color/cardview_grey"
-
-                                            android:layout_marginLeft="@dimen/card_view_marginleftright"
-                                            android:layout_weight=".4"
-                                            android:layout_marginTop="@dimen/card_view_margintop"
-                                            android:layout_height="@dimen/card_view_height">
-
-                                                <LinearLayout
-                                                    android:id="@+id/linear6"
-                                                    android:background="@drawable/hoover"
-
-                                                    android:layout_width="match_parent"
-                                                    android:orientation="vertical"
-                                                    android:gravity="center"
-                                                    android:layout_height="match_parent">
-
-                                                        <ImageView
-                                                            android:layout_width="wrap_content"
-                                                            android:layout_height="wrap_content"
-                                                            android:src="@drawable/amenities"/>
-
-                                                        <TextView
-                                                            android:layout_width="wrap_content"
-                                                            android:layout_height="wrap_content"
-                                                            android:text="Amenities"
-                                                            android:textStyle="bold"
-                                                            android:textColor="@color/thembluecolor"/>
+                                </android.support.v7.widget.CardView>
 
 
 
-                                                </LinearLayout>
+                                <android.support.v7.widget.CardView
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="0dp"
+                                    android:id="@+id/card_view6"
+                                    android:elevation="20dp"
+                                    android:layout_marginBottom="@dimen/card_view_margintop"
+                                    card_view:cardBackgroundColor="@color/cardview_grey"
+
+                                    android:layout_marginLeft="@dimen/card_view_marginleftright"
+                                    android:layout_weight=".4"
+                                    android:layout_marginTop="@dimen/card_view_margintop"
+                                    android:layout_height="@dimen/card_view_height">
+
+                                        <LinearLayout
+                                            android:id="@+id/linear6"
+                                            android:background="@drawable/hoover"
+
+                                            android:layout_width="match_parent"
+                                            android:orientation="vertical"
+                                            android:gravity="center"
+                                            android:layout_height="match_parent">
+
+                                                <ImageView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:src="@drawable/amenities"/>
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Amenities"
+                                                    android:textStyle="bold"
+                                                    android:textColor="@color/thembluecolor"/>
 
 
 
-                                        </android.support.v7.widget.CardView>
+                                        </LinearLayout>
 
 
+
+                                </android.support.v7.widget.CardView>
 
 
 
@@ -383,13 +381,91 @@ android:weightSum="100"
 
 
 
-                                </LinearLayout>
+
+
+                        </LinearLayout>
 
 
 
 
 
 
+
+
+
+
+                                <!--<LinearLayout-->
+                                    <!--android:id="@+id/linear_layoufortn"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="150dp"-->
+                                    <!--android:orientation="horizontal"-->
+                                    <!--android:gravity="center"-->
+                                    <!--android:weightSum="1">-->
+
+                                        <!--<android.support.v7.widget.CardView-->
+                                            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+                                            <!--android:layout_width="290dp"-->
+                                            <!--android:id="@+id/card_view7"-->
+                                            <!--android:elevation="20dp"-->
+                                            <!--card_view:cardBackgroundColor="@color/cardview_grey"-->
+
+
+
+                                            <!--android:layout_marginBottom="@dimen/card_view_margintop"-->
+                                            <!--android:layout_marginTop="@dimen/card_view_margintop"-->
+                                            <!--android:layout_height="90dp">-->
+
+                                                <!--<LinearLayout-->
+                                                    <!--android:id="@+id/linear7"-->
+                                                    <!--android:background="@drawable/hoover"-->
+
+                                                    <!--android:layout_width="match_parent"-->
+                                                    <!--android:orientation="horizontal"-->
+                                                    <!--android:gravity="center"-->
+                                                    <!--android:layout_height="match_parent">-->
+
+                                                        <!--<ImageView-->
+                                                            <!--android:layout_width="wrap_content"-->
+                                                            <!--android:layout_height="wrap_content"-->
+                                                            <!--android:paddingRight="5dp"-->
+                                                            <!--android:src="@drawable/chat"/>-->
+
+                                                        <!--<TextView-->
+                                                            <!--android:layout_width="wrap_content"-->
+                                                            <!--android:layout_height="wrap_content"-->
+                                                            <!--android:text="Chat"-->
+                                                            <!--android:textStyle="bold"-->
+                                                            <!--android:textColor="@color/thembluecolor"/>-->
+
+
+
+                                                <!--</LinearLayout>-->
+
+
+
+                                        <!--</android.support.v7.widget.CardView>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <!--</LinearLayout>-->
 
 
 

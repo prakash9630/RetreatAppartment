@@ -64,19 +64,7 @@
                 android:layout_marginBottom="@dimen/feedbace_margin_botton"
                 android:background="@drawable/shape"
                 android:layout_height="40dp" />
-            <EditText
-                android:inputType="textEmailAddress"
-                android:textCursorDrawable="@null"
-                android:textSize="15dp"
 
-                android:id="@+id/feedback_email"
-                android:background="@drawable/shape"
-                android:layout_width="match_parent"
-                android:hint="Email"
-                android:layout_marginBottom="@dimen/feedbace_margin_botton"
-
-                android:padding="10dp"
-                android:layout_height="40dp" />
             <EditText
                 android:textCursorDrawable="@null"
                 android:textSize="15dp"
@@ -92,7 +80,10 @@
                 android:padding="10dp"
                 android:layout_height="200dp" />
 
-            <Button
+
+
+
+                <Button
                 android:id="@+id/feedback_send"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

@@ -39,6 +39,8 @@ import org.json.JSONObject;
 import java.util.Locale;
 
 import me.relex.circleindicator.CircleIndicator;
+import project.revision.tap.retre.Chat.Chat_activity;
+import project.revision.tap.retre.Chat.Chat_start;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity
     String obe_night,obe_week,obe_month;
     String tbd_night,tbd_week,tbd_month;
     String tbs_night,tbs_week,tbs_month;
+    NavigationView navigationView;
 
 
 
@@ -69,12 +72,13 @@ public class MainActivity extends AppCompatActivity
         mLinear5=(LinearLayout)findViewById(R.id.linear5);
 
         mLinear6=(LinearLayout)findViewById(R.id.linear6);
+
         mBook=(LinearLayout)findViewById(R.id.booknow);
         mContact=(LinearLayout)findViewById(R.id.contactnow);
 
         Runtime.getRuntime().gc();
         getPrice();
-
+hideItem();
 
         mContact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +144,8 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
+
 mBook.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -183,7 +189,14 @@ mBook.setOnClickListener(new View.OnClickListener() {
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+
+
+
+
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
 
@@ -237,7 +250,7 @@ mBook.setOnClickListener(new View.OnClickListener() {
                             tbs_week=week;
                             tbs_month=month;
                         }
-//                        Toast.makeText(AppartmentType.this,p_month+" "+" "+ p_week+" "+p_night , Toast.LENGTH_SHORT).show();
+
 
 
                         SharedPreferences sharedPreferences=getSharedPreferences("price", Context.MODE_PRIVATE);
@@ -286,6 +299,40 @@ mBook.setOnClickListener(new View.OnClickListener() {
 
 
     }
+
+    private void destroyCookies()
+    {
+
+        SharedPreferences preferences=getSharedPreferences("Authentication", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.clear();
+        editor.commit();
+//        finish();
+    }
+
+
+    private void hideItem()
+    {
+        SharedPreferences preferences=getSharedPreferences("Authentication", Context.MODE_PRIVATE);
+        String mCookies = preferences.getString("cookies",null);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu nav_Menu = navigationView.getMenu();
+        if (mCookies != null)
+        {
+            nav_Menu.findItem(R.id.login).setVisible(false);
+        }
+        else
+        {
+            nav_Menu.findItem(R.id.nav_logout).setVisible(false);
+            nav_Menu.findItem(R.id.nav_order).setVisible(false);
+
+            nav_Menu.findItem(R.id.login).setVisible(true);
+
+        }
+
+
+    }
+
 
 
 void getDirection()
@@ -347,7 +394,13 @@ void getDirection()
             Intent i=new Intent(this,Gallary_activity.class);
             startActivity(i);
 
-        } else if (id == R.id.nav_contact) {
+        }
+        else if (id == R.id.nav_chat) {
+            Intent i=new Intent(this,Chat_start.class);
+            startActivity(i);
+
+        }
+        else if (id == R.id.nav_contact) {
             Intent i=new Intent(this,Contact_Activity.class);
             startActivity(i);
 
@@ -359,11 +412,8 @@ void getDirection()
             Intent i=new Intent(this,AppartmentType.class);
             startActivity(i);
 
-        } else if (id == R.id.nav_emergency_call) {
-            Intent i=new Intent(this,Emergency_calls.class);
-            startActivity(i);
-
         }
+
         else if (id == R.id.nav_amenities) {
             Intent i=new Intent(this,Amenities_activity.class);
             startActivity(i);
@@ -372,6 +422,19 @@ void getDirection()
         else if (id == R.id.nav_location) {
             getDirection();
 
+
+
+        }
+        else if (id == R.id.nav_logout) {
+            destroyCookies();
+            hideItem();
+
+
+
+        }
+        else if (id == R.id.nav_order) {
+            Intent i=new Intent(MainActivity.this,Order.class);
+            startActivity(i);
 
 
         }

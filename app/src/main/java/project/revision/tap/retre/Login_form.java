@@ -1,9 +1,18 @@
 package project.revision.tap.retre;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Paint;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,12 +27,19 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
+import java.net.CookieStore;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import project.revision.tap.retre.Helper.GlobalState;
+import project.revision.tap.retre.Pojo.User_login_info;
 
 /**
  * Created by prakash on 10/17/2016.
@@ -33,6 +49,10 @@ public class Login_form extends AppCompatActivity {
     Button mLogin,mSignup;
     TextView mForgot;
     String username,password;
+    Toolbar login_toolbar;
+    String sessionid,sessionname,token,Uname,mail,mCookie;
+
+
 
     static  String Loginurl=Public_Url.LoginUrl;
 
@@ -45,7 +65,33 @@ public class Login_form extends AppCompatActivity {
         mLogin= (Button) findViewById(R.id.login_id);
         mSignup=(Button)findViewById(R.id.signup_id);
         mForgot=(TextView)findViewById(R.id.forgot_id);
-        login();
+        login_toolbar=(Toolbar)findViewById(R.id.login_toolbar);
+        setSupportActionBar(login_toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        mForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Login_form.this,ResetPassword.class);
+                startActivity(intent);
+            }
+        });
+
+        mForgot.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    mForgot.setPaintFlags(mForgot.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    mForgot.setPaintFlags(mForgot.getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+
+
+                }return false;
+            }
+        });
+
+
 
 
         mLogin.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +107,15 @@ public class Login_form extends AppCompatActivity {
                 }
                 else
                 {
+                    if(isOnline())
+                    {
 
+                        Login();
+
+                    }
+                    else {
+                        Toast.makeText(Login_form.this, "No internet connection", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
             }
@@ -73,77 +127,96 @@ public class Login_form extends AppCompatActivity {
 
 
 
-    void login()
+    void Login()
     {
-        username=mUsername.getText().toString();
-        password=mPassword.getText().toString();
 
-        JsonObjectRequest request=new JsonObjectRequest(Request.Method.POST, Loginurl, new Response.Listener<JSONObject>() {
+        StringRequest request=new StringRequest(Request.Method.POST, Loginurl, new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONObject response) {
+            public void onResponse(String response) {
 
-                if (response==null)
-                {
-                    Toast.makeText(Login_form.this, "there is nothing to display", Toast.LENGTH_SHORT).show();
+                try {
+                    JSONObject obj=new JSONObject(response);
+                    sessionid =obj.getString("sessid");
+                    sessionname=obj.getString("session_name");
+                    token=obj.getString("token");
+
+
+                    JSONObject user=obj.getJSONObject("user");
+
+                    Uname=user.getString("name");
+                    mail=user.getString("mail");
+
+
+                    mCookie=sessionid+"="+sessionname;
+
+
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-                Toast.makeText(Login_form.this,response.toString(), Toast.LENGTH_SHORT).show();
+
+
+
+
+                Intent i=new Intent(Login_form.this,MainActivity.class);
+finish();
+
+
+
+SharedPreferences preferences=getSharedPreferences("Authentication", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferences.edit();
+                editor.putString("sessionid",sessionid);
+                editor.putString("sessionname",sessionname);
+                editor.putString("token",token);
+                editor.putString("username",username);
+                editor.putString("email",mail);
+                editor.putString("cookies",mCookie);
+                editor.commit();
+
+
+
+
+                startActivity(i);
+
+
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Login_form.this,"wrong username or password", Toast.LENGTH_LONG).show();
 
-                Toast.makeText(Login_form.this,error.toString(), Toast.LENGTH_SHORT).show();
 
             }
-        })
-        {
+        }) {
+
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String,String> params=new HashMap<String, String>();
-                params.put("username","guestuser");
-                params.put("password","password");
+            protected Map<String, String> getParams() {
+                Map<String,String> parms=new HashMap<>();
+                parms.put("username", mUsername.getText().toString());
+                parms.put("password", mPassword.getText().toString());
 
-                return  params;
 
+                return parms;
             }
-
 
 
         };
-
-        RequestQueue queue= Volley.newRequestQueue(this);
-        queue.add(request);
+        RequestQueue q=Volley.newRequestQueue(this);
+        q.add(request);
     }
 
-//    void Login()
-//    {
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, Loginurl,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Toast.makeText(Login_form.this, response.toString(), Toast.LENGTH_SHORT).show();
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(Login_form.this, error.toString(), Toast.LENGTH_SHORT).show();                    }
-//                }){
-//            @Override
-//            protected Map<String,String> getParams(){
-//                Map<String,String> params = new HashMap<String, String>();
-//                params.put("username",mUsername.getText().toString());
-//                params.put("password",mPassword.getText().toString());
-//
-//                return params;
-//            }
-//
-//        };
-//
-//        RequestQueue requestQueue = Volley.newRequestQueue(this);
-//        requestQueue.add(stringRequest);
-//    }
 
+    protected boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnected()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

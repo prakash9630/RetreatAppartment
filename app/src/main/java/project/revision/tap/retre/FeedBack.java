@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  */
 public class FeedBack extends AppCompatActivity {
     Toolbar toolbar;
-    EditText mName,mEmail,mMessage;
+    EditText mName,mMessage;
     Button mSent;
     String possibleEmail;
 
@@ -38,16 +38,10 @@ public class FeedBack extends AppCompatActivity {
 
 
         mName=(EditText)findViewById(R.id.feedback_name);
-        mEmail=(EditText)findViewById(R.id.feedback_email);
 
-        Pattern emailPattern = Patterns.EMAIL_ADDRESS; // API level 8+
-        android.accounts.Account[] accounts = AccountManager.get(getBaseContext()).getAccounts();
-        for (android.accounts.Account account : accounts) {
-            if (emailPattern.matcher(account.name).matches()) {
-                 possibleEmail = account.name;
-            }
-        }
-        mEmail.setText(possibleEmail);
+
+
+
         mMessage=(EditText)findViewById(R.id.feedback_message);
         mSent=(Button)findViewById(R.id.feedback_send);
 
@@ -82,7 +76,7 @@ public class FeedBack extends AppCompatActivity {
     void validation()
     {
         String name=mName.getText().toString();
-        String email=mEmail.getText().toString();
+
         String message=mMessage.getText().toString();
 
         if (name.length()<1)
@@ -94,12 +88,7 @@ public class FeedBack extends AppCompatActivity {
             mMessage.setError("Please type feedback");
 
         }
-        else  if(!isValid(email))
-        {
 
-            mEmail.setError("Email is not valid");
-
-        }
         else
         {
           if(isOnline())
@@ -110,7 +99,7 @@ public class FeedBack extends AppCompatActivity {
               Intent Email = new Intent(Intent.ACTION_SEND);
 
               Email.putExtra(Intent.EXTRA_EMAIL, new String[] { "zzruven@gmail.com" });
-              Email.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+              Email.putExtra(Intent.EXTRA_SUBJECT, "Feedback form "+mName.getText().toString());
               Email.putExtra(Intent.EXTRA_TEXT, message);
               Email.setType("message/rfc822");
               try {

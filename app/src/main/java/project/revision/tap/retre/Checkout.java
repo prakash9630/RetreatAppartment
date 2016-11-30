@@ -3,6 +3,8 @@ package project.revision.tap.retre;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -32,6 +34,10 @@ public class Checkout extends AppCompatActivity {
     EditText mFullname,mEmail,mAddress,mCity;
     String name,email,address,city;
 
+    String mUnitType,mUnitPrice,mUnitno;
+
+
+
 
 
     Locale[] locale = Locale.getAvailableLocales();
@@ -43,13 +49,19 @@ public class Checkout extends AppCompatActivity {
         mFullname=(EditText) findViewById(R.id.check_fullname);
         mEmail=(EditText) findViewById(R.id.check_email);
         mAddress=(EditText) findViewById(R.id.check_address);
-        mCity=(EditText) findViewById(R.id.check_fullname);
+        mCity=(EditText) findViewById(R.id.check_city);
+
+        Intent intent=getIntent();
+        mUnitType=intent.getStringExtra("Unit_Type");
+        mUnitPrice=intent.getStringExtra("Unit_Price");
+        mUnitno=intent.getStringExtra("Unit_no");
 
 
 
 
 
-        Toast.makeText(Checkout.this, name+""+email+""+address+""+city, Toast.LENGTH_LONG).show();
+
+
 
         for( Locale loc : locale ){
             country = loc.getDisplayCountry();
@@ -78,55 +90,91 @@ public class Checkout extends AppCompatActivity {
         mCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name=mFullname.getText().toString();
-                email=mEmail.getText().toString();
-                address=mAddress.getText().toString();
-                city=mCity.getText().toString();
+                name = mFullname.getText().toString();
+                email = mEmail.getText().toString();
+                address = mAddress.getText().toString();
+                city = mCity.getText().toString();
 
-                if (name.length()<0)
-                {
+                if (name.length() < 1) {
+
                     mFullname.setError("Please fill you name");
-                }
-                 else if (address.length()<0)
-                {
+                } else if (address.length() < 1) {
                     mAddress.setError("Please fill your address");
-                }
-                else if (city.length()<0)
-                {
+                } else if (city.length() < 1) {
                     mCity.setError("Please enter your city");
-                }
-                else if (!isValid(email))
-                {
+                } else if (!isValid(email)) {
                     mEmail.setError("Set valid email address");
-                }
-                else {
+                } else {
+
+                    if (isOnline()) {
+
+                        Intent i=new Intent(Checkout.this,Order.class);
+                        i.putExtra("apt_name",mUnitType);
+                        i.putExtra("apt_price",mUnitPrice);
+                        i.putExtra("apt_unitno",mUnitno);
+                        i.putExtra("user_name",name);
+                        i.putExtra("user_email",email);
+                        i.putExtra("user_address",address);
+                        i.putExtra("user_city",city);
+                        i.putExtra("user_country",mCountry.getSelectedItem().toString());
+
+                        startActivity(i);
 
 
 
-                    String body="<html><head><title>Title</title></head><body>This is random text.</body></html>";
-                    Intent i = new Intent(Intent.ACTION_SEND);
-                    i.setType("message/rfc822");
-                    i.putExtra(Intent.EXTRA_EMAIL, new String[]{"zzruven@gmail.com"});
-                    i.putExtra(Intent.EXTRA_SUBJECT, "Booking request");
 
 
-                    i.putExtra(Intent.EXTRA_TEXT, "Full name :" + name + " Email : " + email + " Country :" + mCountry.getSelectedItem() + " Address " + address + " City " + city + " Arrival date :" + mArrival + " Departure date " + mDeparture + " Unit :" + mUnit + " Unit name :" + getIntent().getStringExtra("Unit_Type") + " Unit_Price :$" + getIntent().getStringExtra("Unit_Price"));
-                    try {
-                        startActivity(Intent.createChooser(i, "Send mail..."));
-                        Intent ii=new Intent(Checkout.this,MainActivity.class);
-                        startActivity(ii);
-                    } catch (android.content.ActivityNotFoundException ex) {
-                        Toast.makeText(Checkout.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
                     }
-                }
+                    else
+                    {
+                        Toast.makeText(Checkout.this, "No internet Connection", Toast.LENGTH_SHORT).show();
+                    }
 
+                }
             }
+
         });
 
 
 
 
 
+    }
+
+    void sendEmail()
+    {
+        name = mFullname.getText().toString();
+        email = mEmail.getText().toString();
+        address = mAddress.getText().toString();
+        city = mCity.getText().toString();
+        String body = "<html><head><title>Title</title></head><body>This is random text.</body></html>";
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"zzruven@gmail.com"});
+        i.putExtra(Intent.EXTRA_SUBJECT, "Booking request");
+
+
+        i.putExtra(Intent.EXTRA_TEXT, "Full name :" + name + " Email : " + email + " Country :" + mCountry.getSelectedItem() + " Address " + address + " City " + city + " Arrival date :" + mArrival + " Departure date " + mDeparture + " Unit :" + mUnit + " Unit name :" + getIntent().getStringExtra("Unit_Type") + " Unit_Price :$" + getIntent().getStringExtra("Unit_Price"));
+        try {
+            startActivity(Intent.createChooser(i, "Send mail..."));
+            Intent ii = new Intent(Checkout.this, MainActivity.class);
+            startActivity(ii);
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(Checkout.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+
+    protected boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnected()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
