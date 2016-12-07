@@ -27,4 +27,5 @@
     <dimen name="checkoutedttextheight">40dp</dimen>
     <dimen name="chekoutmargin">8dp</dimen>
     <dimen name="minHeight">200dp</dimen>
+    <dimen name="marginfortext">10dp</dimen>
 </resources>

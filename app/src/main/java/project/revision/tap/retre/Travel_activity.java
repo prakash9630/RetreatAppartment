@@ -40,7 +40,7 @@ public class Travel_activity extends AppCompatActivity {
         adapter=new Fragment_adapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.addTab(tabLayout.newTab().setText("Places"));
-        tabLayout.addTab(tabLayout.newTab().setText("Restaurants"));
+        tabLayout.addTab(tabLayout.newTab().setText("POI"));
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

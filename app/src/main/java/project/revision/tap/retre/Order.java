@@ -37,7 +37,7 @@ public class Order extends AppCompatActivity {
 
 
     PayPalConfiguration m_configuration;
-    String mClintId="AakdYUax6tmmWS7fNT4sktc3sDuyCxfEOmMLv2eN0NisHNOVSDqeZYszk6-089eTGdwsKu1gQyaGM_A8";
+    String mClintId="AZgk2hCu3i968ZBiuXHzPgabxExbdxbeO2q5U4cWObpzMdIb8qgVAlV3CKAT";
    Intent mServices;
     int m_paypalRequestCode=999;
 
@@ -65,7 +65,7 @@ public class Order extends AppCompatActivity {
         mPayment=(Button)findViewById(R.id.payment_btn);
 
         m_configuration=new PayPalConfiguration()
-                .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+                .environment(PayPalConfiguration.ENVIRONMENT_PRODUCTION)
                 .clientId(mClintId);
         mServices=new Intent(this, PayPalService.class);
         mServices.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,m_configuration);

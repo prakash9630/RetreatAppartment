@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="toolbar">#CE1F29</color>
     <color name="cardview_grey">#E5E8FF</color>
-    <color name="thembluecolor">#1B1464</color>
+    <color name="thembluecolor">#357cce</color>
 
     <!--<color name="thembluecolor">#2A4494</color>-->
     <color name="roomTypebackground">#e2dbdb</color>
@@ -15,7 +15,7 @@
     <color name="white">#ffffff</color>
 
 
-    <color name="Smooch_accent">#1B1464</color>
+    <color name="Smooch_accent">#357cce</color>
     <color name="Smooch_accentDark">#357cce</color>
     <color name="Smooch_accentLight">#53a4e4</color>
 

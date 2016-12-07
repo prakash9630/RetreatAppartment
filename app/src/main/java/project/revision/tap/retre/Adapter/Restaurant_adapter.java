@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import project.revision.tap.retre.Bamboo;
 import project.revision.tap.retre.Fire_ice;
 import project.revision.tap.retre.Gaia_restaurant;
 import project.revision.tap.retre.Garden_of_dreams;
@@ -76,6 +77,11 @@ public class Restaurant_adapter extends RecyclerView.Adapter<Holder> {
                 if (position==4)
                 {
                     Intent i=new Intent(ctx,Garden_of_dreams.class);
+                    ctx.startActivity(i);
+                }
+                if (position==5)
+                {
+                    Intent i=new Intent(ctx,Bamboo.class);
                     ctx.startActivity(i);
                 }
 

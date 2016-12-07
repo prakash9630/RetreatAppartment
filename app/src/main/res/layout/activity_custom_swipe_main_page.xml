@@ -17,7 +17,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="#905E589E"
+            android:background="#90357cce"
             android:ellipsize="end"
             android:textColor="#ffffff"
             android:textStyle="bold"

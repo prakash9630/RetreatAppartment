@@ -53,6 +53,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:paddingTop="@dimen/marginfortext"
                     android:textStyle="bold"
                     android:textSize="15dp"
                     android:layout_width="match_parent"
@@ -63,6 +64,8 @@
                     android:textAlignment="center"
                     android:id="@+id/swyambhu_title"/>
                 <TextView
+                    android:layout_marginLeft="@dimen/marginfortext"
+                    android:layout_marginRight="@dimen/marginfortext"
                     android:padding="10dp"
                     android:text="Swayambhunath is one of the most glorious Buddhist Stupa, said to be 2000 years old. Painted on the four sides of the spire's base are all seeing eyes of Lord Buddha, keeping an eternal watch on the valley distinguishing between vice and virtue. Swayambhunath is, perhaps, the best place to observe the religious harmony in Nepal."
                     android:layout_width="wrap_content"
@@ -80,7 +83,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
+
                     android:text="Get direction"/>
 
 

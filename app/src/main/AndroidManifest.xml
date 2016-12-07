@@ -152,6 +152,13 @@
         android:name="android.support.PARENT_ACTIVITY"
         android:value=".Travel_activity" />
 </activity>
+
+        <activity android:name=".Bamboo">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Travel_activity" />
+
+        </activity>
         <activity android:name=".ImageViewPager" android:configChanges="orientation|keyboardHidden|screenSize"></activity>
         <activity android:name=".Sign_up"></activity>
 

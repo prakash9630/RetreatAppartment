@@ -39,6 +39,7 @@
 
     <LinearLayout
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_width="0dp"
         android:orientation="vertical"
         android:layout_height="match_parent"
@@ -50,7 +51,7 @@
 
         <LinearLayout
             android:id="@+id/penthouse_layout"
-            android:background="@color/roomTypebackground"
+            android:background="@color/cardview_grey"
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="wrap_content">
@@ -71,6 +72,7 @@
 
             <LinearLayout
                 android:orientation="vertical"
+                android:background="@color/cardview_grey"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -137,7 +139,7 @@
         <!--second room-->
         <LinearLayout
             android:id="@+id/threebedroomhimalayaview_layout"
-            android:background="@color/roomTypebackground"
+            android:background="@color/cardview_grey"
             android:layout_marginTop="@dimen/paddingofrooms"
             android:layout_width="match_parent"
             android:orientation="vertical"
@@ -222,7 +224,7 @@
         <!--third room-->
         <LinearLayout
             android:id="@+id/twobedroomstandard_layout"
-            android:background="@color/roomTypebackground"
+            android:background="@color/cardview_grey"
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_marginTop="@dimen/paddingofrooms"
@@ -329,7 +331,7 @@
 
     <LinearLayout
         android:layout_marginTop="10dp"
-
+android:layout_marginRight="5dp"
         android:layout_width="0dp"
         android:orientation="vertical"
         android:layout_height="match_parent"
@@ -339,12 +341,13 @@
         <!--first room right-->
         <LinearLayout
             android:id="@+id/onebedroomexecutive_layout"
-            android:background="@color/roomTypebackground"
+            android:background="@color/cardview_grey"
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="wrap_content">
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/card_view_height">
 
@@ -423,7 +426,7 @@
         <!--second room right-->
         <LinearLayout
             android:id="@+id/twobedroomdelux_layout"
-            android:background="@color/roomTypebackground"
+            android:background="@color/cardview_grey"
             android:layout_marginTop="@dimen/paddingofrooms"
             android:layout_width="match_parent"
             android:orientation="vertical"

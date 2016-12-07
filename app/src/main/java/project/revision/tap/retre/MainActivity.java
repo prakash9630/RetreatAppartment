@@ -1,12 +1,10 @@
 package project.revision.tap.retre;
 
 import android.content.ActivityNotFoundException;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.location.Location;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -18,11 +16,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -39,11 +37,14 @@ import org.json.JSONObject;
 import java.util.Locale;
 
 import me.relex.circleindicator.CircleIndicator;
-import project.revision.tap.retre.Chat.Chat_activity;
 import project.revision.tap.retre.Chat.Chat_start;
+import project.revision.tap.retre.Data.Channel;
+import project.revision.tap.retre.Data.Item;
+import project.revision.tap.retre.service.WeatherServiceCallback;
+import project.revision.tap.retre.service.YahooWeatherService;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,WeatherServiceCallback {
     ViewPager viewPager;
     customSwip customSwip;
     static String url=Public_Url.Price;
@@ -55,6 +56,12 @@ public class MainActivity extends AppCompatActivity
     String tbd_night,tbd_week,tbd_month;
     String tbs_night,tbs_week,tbs_month;
     NavigationView navigationView;
+    TextView temperature;
+    TextView condition;
+    TextView location;
+    YahooWeatherService service;
+    LinearLayout weatherlayout;
+
 
 
 
@@ -63,6 +70,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         mLinear1=(LinearLayout)findViewById(R.id.linear1);
@@ -70,11 +79,31 @@ public class MainActivity extends AppCompatActivity
         mLinear3=(LinearLayout)findViewById(R.id.linear3);
         mLinear4=(LinearLayout)findViewById(R.id.linear4);
         mLinear5=(LinearLayout)findViewById(R.id.linear5);
+        weatherlayout=(LinearLayout)findViewById(R.id.weather_layout);
 
         mLinear6=(LinearLayout)findViewById(R.id.linear6);
 
         mBook=(LinearLayout)findViewById(R.id.booknow);
         mContact=(LinearLayout)findViewById(R.id.contactnow);
+        temperature=(TextView)findViewById(R.id.temperature_id);
+        condition=(TextView)findViewById(R.id.condition);
+        location=(TextView)findViewById(R.id.place);
+
+        service=new YahooWeatherService(this);
+
+        if (isOnline())
+        {
+            service.refreshWeather("Kathmandu");
+            weatherlayout.setBackgroundColor(Color.parseColor("#50000000"));
+
+        }
+        else
+        {
+
+            weatherlayout.setVisibility(View.INVISIBLE);
+        }
+
+
 
         Runtime.getRuntime().gc();
         getPrice();
@@ -197,6 +226,16 @@ mBook.setOnClickListener(new View.OnClickListener() {
         navigationView.setNavigationItemSelectedListener(this);
 
 
+    }
+
+    protected boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnected()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
@@ -433,8 +472,7 @@ void getDirection()
 
         }
         else if (id == R.id.nav_order) {
-            Intent i=new Intent(MainActivity.this,Order.class);
-            startActivity(i);
+
 
 
         }
@@ -456,6 +494,18 @@ void getDirection()
     }
 
 
+    @Override
+    public void serviceSuccess(Channel channel) {
+        Item item = channel.getItem();
 
+        location.setText(service.getLocation());
+        condition.setText(item.getCondition().getDescription());
+        temperature.setText(item.getCondition().getTemperature()+"\u00B0 "+channel.getUnits().getTemperature());
 
- }
+    }
+
+    @Override
+    public void serviceFalure(Exception exception) {
+        weatherlayout.setVisibility(View.GONE);
+    }
+}

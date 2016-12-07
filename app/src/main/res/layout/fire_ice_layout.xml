@@ -53,6 +53,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:layout_marginTop="@dimen/marginfortext"
 
                         android:textStyle="bold"
                         android:textSize="15dp"
@@ -64,6 +65,9 @@
                         android:textAlignment="center"
                         android:id="@+id/swyambhu_title"/>
                     <TextView
+                        android:layout_marginLeft="@dimen/marginfortext"
+                        android:layout_marginRight="@dimen/marginfortext"
+
                         android:padding="10dp"
                         android:text="@string/fireandice_text"
                         android:layout_width="wrap_content"
@@ -79,7 +83,8 @@
                         android:theme="@style/MyButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+
+
                         android:textColor="@color/white"
                         android:text="Get direction"/>
 

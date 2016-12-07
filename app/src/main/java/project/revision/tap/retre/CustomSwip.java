@@ -2,6 +2,7 @@ package project.revision.tap.retre;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,6 +48,7 @@ public class customSwip extends PagerAdapter {
         TextView imageName=(TextView)itemView.findViewById(R.id.img_name);
         imageName.setText(mImageName[position]);
         container.addView(itemView);
+
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

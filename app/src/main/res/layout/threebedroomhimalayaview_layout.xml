@@ -234,6 +234,9 @@
                     android:layout_height="match_parent">
 
                     <WebView
+                        android:layout_marginLeft="@dimen/marginfortext"
+                        android:layout_marginRight="@dimen/marginfortext"
+                        android:layout_marginTop="@dimen/marginfortext"
                         android:id="@+id/threeBedroom_paragraph1"
                         android:padding="20dp"
                         android:layout_width="match_parent"
@@ -247,6 +250,8 @@
                     android:layout_height="match_parent">
 
                     <WebView
+                        android:layout_marginLeft="@dimen/marginfortext"
+                        android:layout_marginRight="@dimen/marginfortext"
                         android:id="@+id/threeBedroom_paragraph2"
                         android:padding="20dp"
                         android:layout_width="match_parent"

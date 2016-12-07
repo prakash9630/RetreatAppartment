@@ -267,7 +267,7 @@ android:paddingTop="10dp"
                         android:layout_gravity="center"
                         android:textAlignment="center"
                         android:layout_width="match_parent"
-                        android:text="unit3"
+                        android:text="unit 3"
                         android:layout_height="wrap_content"
                         />
 
@@ -306,34 +306,7 @@ android:paddingTop="10dp"
 </LinearLayout>
 
 
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/type_layout"-->
 
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="vertical">-->
-                    <!--<TextView-->
-                        <!--android:id="@+id/type_hint"-->
-                        <!--android:textStyle="bold"-->
-                        <!--android:paddingTop="10dp"-->
-                        <!--android:layout_gravity="center"-->
-                        <!--android:textAlignment="center"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:text="Unit type"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--/>-->
-
-                    <!--<Spinner-->
-                        <!--android:paddingLeft="10dp"-->
-                        <!--android:id="@+id/Unit_type"-->
-                        <!--android:background="@drawable/spinner_style"-->
-                        <!--android:spinnerMode="dropdown"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_marginLeft="20dp"-->
-                        <!--android:layout_marginRight="20dp"-->
-                        <!--android:layout_height="35dp"></Spinner>-->
-
-                <!--</LinearLayout>-->
 
 
 

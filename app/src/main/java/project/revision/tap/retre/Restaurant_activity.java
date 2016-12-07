@@ -37,8 +37,8 @@ public class Restaurant_activity extends Fragment {
     public List<RecyclerInformation> getRestorents()
     {
         List<RecyclerInformation> data=new ArrayList<>();
-        int[] icon={R.drawable.gaia_restaurant,R.drawable.le_sherpa,R.drawable.roadhouse_cafe,R.drawable.fire,R.drawable.gardenofdream};
-        String[] name={"GAIA RESTAURANT & COFFEE SHOP","LE-SHERPA","ROADHOUSE CAFÉ","FIRE AND ICE PIZZERIA","GARDEN OF DREAMS"};
+        int[] icon={R.drawable.gaia_restaurant,R.drawable.le_sherpa,R.drawable.roadhouse_cafe,R.drawable.fire,R.drawable.gardenofdream,R.drawable.bamboo};
+        String[] name={"GAIA RESTAURANT & COFFEE SHOP","LE-SHERPA","ROADHOUSE CAFÉ","FIRE AND ICE PIZZERIA","GARDEN OF DREAMS","BAMBOO"};
         for(int i=0;i<icon.length && i<name.length;i++)
         {
 

@@ -22,18 +22,49 @@ android:weightSum="100"
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-
-
             android:id="@+id/fragment_viewpager">
-
-
-
-
-
-
-
         </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/weather_layout"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/temperature_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:id="@+id/place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
 
 
         <me.relex.circleindicator.CircleIndicator
@@ -96,14 +127,14 @@ android:weightSum="100"
                                                         <ImageView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
-                                                            android:src="@drawable/apartments"/>
+                                                            android:src="@mipmap/apt"/>
 
                                                         <TextView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
                                                             android:text="Apartments"
                                                             android:textStyle="bold"
-                                                            android:textColor="@color/thembluecolor"/>
+                                                            android:textColor="@color/white"/>
 
 
 
@@ -131,6 +162,8 @@ android:weightSum="100"
 
                                                 <LinearLayout
                                                     android:id="@+id/linear2"
+
+
                                                     android:background="@drawable/hoover"
                                                     android:layout_width="match_parent"
                                                     android:orientation="vertical"
@@ -140,14 +173,14 @@ android:weightSum="100"
                                                         <ImageView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
-                                                            android:src="@drawable/aboutus"/>
+                                                            android:src="@mipmap/aboutus"/>
 
                                                         <TextView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
                                                             android:text="About us"
                                                             android:textStyle="bold"
-                                                            android:textColor="@color/thembluecolor"/>
+                                                            android:textColor="@color/white"/>
 
 
 
@@ -201,14 +234,14 @@ android:weightSum="100"
                                                         <ImageView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
-                                                            android:src="@drawable/location"/>
+                                                            android:src="@mipmap/location"/>
 
                                                         <TextView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
                                                             android:text="Location"
                                                             android:textStyle="bold"
-                                                            android:textColor="@color/thembluecolor"/>
+                                                            android:textColor="@color/white"/>
 
 
 
@@ -243,14 +276,14 @@ android:weightSum="100"
                                                         <ImageView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
-                                                            android:src="@drawable/gallery"/>
+                                                            android:src="@mipmap/gallery"/>
 
                                                         <TextView
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
                                                             android:text="Gallery"
                                                             android:textStyle="bold"
-                                                            android:textColor="@color/thembluecolor"/>
+                                                            android:textColor="@color/white"/>
 
 
 
@@ -306,14 +339,14 @@ android:weightSum="100"
                                                 <ImageView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
-                                                    android:src="@drawable/travel"/>
+                                                    android:src="@mipmap/travel"/>
 
                                                 <TextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="Travel"
                                                     android:textStyle="bold"
-                                                    android:textColor="@color/thembluecolor"/>
+                                                    android:textColor="@color/white"/>
 
 
 
@@ -350,14 +383,14 @@ android:weightSum="100"
                                                 <ImageView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
-                                                    android:src="@drawable/amenities"/>
+                                                    android:src="@mipmap/aminities"/>
 
                                                 <TextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="Amenities"
                                                     android:textStyle="bold"
-                                                    android:textColor="@color/thembluecolor"/>
+                                                    android:textColor="@color/white"/>
 
 
 
@@ -497,7 +530,8 @@ android:weightSum="100"
                     android:id="@+id/booknow"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@color/thembluecolor"
+                    android:background="@drawable/contentmain_btn"
+
                     android:gravity="center"
                     android:layout_weight="49">
 
@@ -516,7 +550,7 @@ android:weightSum="100"
                 <LinearLayout
                     android:id="@+id/contactnow"
                     android:layout_width="0dp"
-                    android:background="@color/thembluecolor"
+                    android:background="@drawable/contentmain_btn"
                     android:gravity="center"
                     android:layout_height="match_parent"
                     android:layout_weight="49">

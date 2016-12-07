@@ -56,10 +56,7 @@
             android:id="@+id/nav_appartments"
 
             android:title="Apartments" />
-        <item
-            android:id="@+id/nav_emergency_call"
 
-            android:title="Emergency call" />
         <item
             android:id="@+id/nav_amenities"
 
