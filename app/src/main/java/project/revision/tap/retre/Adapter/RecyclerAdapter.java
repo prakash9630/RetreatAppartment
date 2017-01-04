@@ -1,28 +1,23 @@
 package project.revision.tap.retre.Adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import project.revision.tap.retre.Ichangu_Narayan;
-import project.revision.tap.retre.Kathmandu_durbar_square;
+import project.revision.tap.retre.Places.Ichangu_Narayan;
+import project.revision.tap.retre.Places.Kathmandu_durbar_square;
 import project.revision.tap.retre.R;
-import project.revision.tap.retre.RecyclerInformation;
-import project.revision.tap.retre.Rooms.OneBedroomExecutive;
-import project.revision.tap.retre.Rooms.TwoBedRoomDeluxe;
-import project.revision.tap.retre.Seto_gumba;
-import project.revision.tap.retre.Swyambhu_nath;
+import project.revision.tap.retre.Helper.RecyclerInformation;
+import project.revision.tap.retre.Places.Seto_gumba;
+import project.revision.tap.retre.Places.Swyambhu_nath;
 
 /**
  * Created by prakash on 9/16/2016.

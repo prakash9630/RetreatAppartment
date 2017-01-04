@@ -12,18 +12,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import project.revision.tap.retre.Bamboo;
-import project.revision.tap.retre.Fire_ice;
-import project.revision.tap.retre.Gaia_restaurant;
-import project.revision.tap.retre.Garden_of_dreams;
-import project.revision.tap.retre.Ichangu_Narayan;
-import project.revision.tap.retre.Kathmandu_durbar_square;
-import project.revision.tap.retre.Le_sherpa;
+import project.revision.tap.retre.Restaurant.Bamboo;
+import project.revision.tap.retre.Restaurant.Fire_ice;
+import project.revision.tap.retre.Restaurant.Gaia_restaurant;
+import project.revision.tap.retre.Restaurant.Garden_of_dreams;
+import project.revision.tap.retre.Restaurant.Le_sherpa;
 import project.revision.tap.retre.R;
-import project.revision.tap.retre.RecyclerInformation;
-import project.revision.tap.retre.Roadhouse_cafe;
-import project.revision.tap.retre.Seto_gumba;
-import project.revision.tap.retre.Swyambhu_nath;
+import project.revision.tap.retre.Helper.RecyclerInformation;
+import project.revision.tap.retre.Restaurant.Roadhouse_cafe;
 
 /**
  * Created by prakash on 9/26/2016.

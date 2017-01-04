@@ -21,14 +21,15 @@
 
         android:theme="@style/AppTheme">
 
+
         <!--android:name="android.support.multidex.MultiDexApplication"-->
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Main_LandigPage_class.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Splash"
+            android:name=".Main_LandigPage_class.Splash"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,47 +43,47 @@
         <activity android:name=".Rooms.TwoBedRoomDeluxe" />
         <activity android:name=".Rooms.TwoBedroomStandard" />
         <activity
-            android:name=".About_Us"
+            android:name=".Main_LandigPage_class.About_Us"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
-        <activity android:name=".Booking">
+        <activity android:name=".Booking_process.Booking">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
         <activity
-            android:name=".Gallary_activity"
+            android:name=".Gallary_activity.Gallary_activity"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
         <activity
-            android:name=".AppartmentType"
+            android:name=".Main_LandigPage_class.AppartmentType"
             android:hardwareAccelerated="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
         <activity
-            android:name=".FeedBack">
+            android:name=".Main_LandigPage_class.FeedBack">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
         <activity
-            android:name=".Contact_Activity">
+            android:name=".Main_LandigPage_class.Contact_Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
-        <activity android:name=".Amenities_activity">
+        <activity android:name=".Main_LandigPage_class.Amenities_activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -96,105 +97,106 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".Travel_activity">
+        <activity android:name=".Main_LandigPage_class.Travel_activity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
-        <activity android:name=".Swyambhu_nath">
+        <activity android:name=".Places.Swyambhu_nath">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
         </activity>
-        <activity android:name=".Kathmandu_durbar_square">
+        <activity android:name=".Places.Kathmandu_durbar_square">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
 
         </activity>
-        <activity android:name=".Seto_gumba">
+        <activity android:name=".Places.Seto_gumba">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
 
         </activity>
-        <activity android:name=".Ichangu_Narayan">
+        <activity android:name=".Places.Ichangu_Narayan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
         </activity>
-        <activity android:name=".Garden_of_dreams">
+        <activity android:name=".Restaurant.Garden_of_dreams">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
         </activity>
-        <activity android:name=".Le_sherpa">
+        <activity android:name=".Restaurant.Le_sherpa">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
         </activity>
-        <activity android:name=".Roadhouse_cafe">
+        <activity android:name=".Restaurant.Roadhouse_cafe">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
         </activity>
-<activity android:name=".Fire_ice">
+<activity android:name=".Restaurant.Fire_ice">
 
     <meta-data
         android:name="android.support.PARENT_ACTIVITY"
-        android:value=".Travel_activity" />
+        android:value=".Main_LandigPage_class.Travel_activity" />
 </activity>
-<activity android:name=".Gaia_restaurant">
+<activity android:name=".Restaurant.Gaia_restaurant">
 
     <meta-data
         android:name="android.support.PARENT_ACTIVITY"
-        android:value=".Travel_activity" />
+        android:value=".Main_LandigPage_class.Travel_activity" />
 </activity>
 
-        <activity android:name=".Bamboo">
+        <activity android:name=".Restaurant.Bamboo">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Travel_activity" />
+                android:value=".Main_LandigPage_class.Travel_activity" />
 
         </activity>
-        <activity android:name=".ImageViewPager" android:configChanges="orientation|keyboardHidden|screenSize"></activity>
-        <activity android:name=".Sign_up"></activity>
+        <activity android:name=".Gallary_activity.ImageViewPager" android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity android:name=".Credentials.Sign_up"></activity>
 
 
-<activity android:name=".Login_form">
+<activity android:name=".Credentials.Login_form">
 
     <meta-data
         android:name="android.support.PARENT_ACTIVITY"
-        android:value=".MainActivity" />
+        android:value=".Main_LandigPage_class.MainActivity" />
 
 </activity>
-        <activity android:name=".Available_rooms">
+        <activity android:name=".Booking_process.Available_rooms">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Booking" />
+                android:value=".Booking_process.Booking" />
 
         </activity>
-        <activity android:name=".Order">
+        <activity android:name=".Booking_process.Order">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Checkout" />
+                android:value=".Booking_process.Checkout" />
         </activity>
 
-        <activity android:name=".Checkout">
+        <activity android:name=".Booking_process.Checkout">
 
         </activity>
-        <activity android:name=".ResetPassword">
+        <activity android:name=".Credentials.ResetPassword">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Login_form" />
+                android:value=".Credentials.Login_form" />
 
 
         </activity>
 
         <activity android:name=".Chat.Chat_start"></activity>
+        <activity android:name=".Main_LandigPage_class.Complet_paymetnt"></activity>
     </application>
 
 </manifest>

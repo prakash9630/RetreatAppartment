@@ -99,18 +99,7 @@
                 android:theme="@style/MyButton"
 
                 android:layout_height="70dp" />
-            <Button
-                android:id="@+id/signup_id"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:text="Sign u\Up"
-                android:textAllCaps="false"
 
-                android:layout_marginTop="5dp"
-                android:textColor="#ffffff"
-                android:theme="@style/MyButtonsignup"
-
-                android:layout_height="70dp" />
 
 
 

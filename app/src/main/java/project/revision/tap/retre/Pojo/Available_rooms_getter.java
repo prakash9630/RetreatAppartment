@@ -8,18 +8,28 @@ import java.io.Serializable;
 public class Available_rooms_getter implements Serializable {
 
     String ApartmentName;
-    Double BookingPrice;
+    Integer BookingPrice;
     String Body;
     String Image;
     int UnitNo;
+    String Unit_tyep_Machinename;
 
 
-    public Available_rooms_getter(String apartmentName, Double bookingPrice, String body, String image, int unitNo) {
+    public Available_rooms_getter(String Unit_tyep_Machinename,String apartmentName, Integer bookingPrice, String body, String image, int unitNo) {
         ApartmentName = apartmentName;
         BookingPrice = bookingPrice;
+        this.Unit_tyep_Machinename=Unit_tyep_Machinename;
         Body = body;
         Image = image;
         UnitNo = unitNo;
+    }
+
+    public String getUnit_tyep_Machinename() {
+        return Unit_tyep_Machinename;
+    }
+
+    public void setUnit_tyep_Machinename(String unit_tyep_Machinename) {
+        Unit_tyep_Machinename = unit_tyep_Machinename;
     }
 
     public String getApartmentName() {
@@ -30,11 +40,11 @@ public class Available_rooms_getter implements Serializable {
         ApartmentName = apartmentName;
     }
 
-    public Double getBookingPrice() {
+    public Integer getBookingPrice() {
         return BookingPrice;
     }
 
-    public void setBookingPrice(Double bookingPrice) {
+    public void setBookingPrice(Integer bookingPrice) {
         BookingPrice = bookingPrice;
     }
 

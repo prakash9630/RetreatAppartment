@@ -164,146 +164,146 @@ android:paddingTop="10dp"
 
                     android:layout_height="35dp"></Spinner>
 
-                <LinearLayout
-                    android:id="@+id/person_id"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/person_id"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
 
-                <TextView
-                    android:textColor="@color/black"
-                    android:id="@+id/textPerson"
-                    android:textStyle="bold"
-                    android:paddingTop="10dp"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:layout_width="match_parent"
-                    android:text="@string/person"
-                    android:layout_height="wrap_content"
-                    />
-
-
-
-<LinearLayout
-    android:id="@+id/unit1"
-    android:visibility="gone"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-                    <TextView
-                        android:textColor="@color/black"
-                        android:id="@+id/first_unit"
-                        android:textStyle="bold"
-                        android:paddingTop="10dp"
-                        android:layout_gravity="center"
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:text="unit 1"
-                        android:layout_height="wrap_content"
-                        />
-
-                    <Spinner
-                        android:paddingLeft="10dp"
-                        android:id="@+id/spinner_person1"
-                        android:background="@drawable/spinner_style"
-                        android:spinnerMode="dropdown"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_height="35dp"></Spinner>
-
-</LinearLayout>
+                <!--<TextView-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:id="@+id/textPerson"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:text="@string/person"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--/>-->
 
 
 
+<!--<LinearLayout-->
+    <!--android:id="@+id/unit1"-->
+    <!--android:visibility="gone"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+                    <!--<TextView-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:id="@+id/first_unit"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:paddingTop="10dp"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:textAlignment="center"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:text="unit 1"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--/>-->
 
+                    <!--<Spinner-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:id="@+id/spinner_person1"-->
+                        <!--android:background="@drawable/spinner_style"-->
+                        <!--android:spinnerMode="dropdown"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:layout_marginRight="20dp"-->
+                        <!--android:layout_height="35dp"></Spinner>-->
 
-                    <LinearLayout
-                        android:id="@+id/unit2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:orientation="vertical">
-                    <TextView
-                        android:textColor="@color/black"
-                        android:id="@+id/textunittwo"
-                        android:textStyle="bold"
-                        android:paddingTop="10dp"
-                        android:layout_gravity="center"
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:text="unit 2"
-                        android:layout_height="wrap_content"
-                        />
-
-                    <Spinner
-                        android:paddingLeft="10dp"
-                        android:id="@+id/spinner_person2"
-                        android:background="@drawable/spinner_style"
-                        android:spinnerMode="dropdown"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_height="35dp"></Spinner>
-                        </LinearLayout>
+<!--</LinearLayout>-->
 
 
 
 
 
-                    <LinearLayout
-                        android:id="@+id/unit3"
-                        android:visibility="gone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/unit2"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:visibility="gone"-->
+                        <!--android:orientation="vertical">-->
+                    <!--<TextView-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:id="@+id/textunittwo"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:paddingTop="10dp"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:textAlignment="center"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:text="unit 2"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--/>-->
 
-
-                    <TextView
-                        android:textColor="@color/black"
-                        android:id="@+id/textunitthree"
-                        android:textStyle="bold"
-                        android:paddingTop="10dp"
-                        android:layout_gravity="center"
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:text="unit 3"
-                        android:layout_height="wrap_content"
-                        />
-
-                    <Spinner
-                        android:paddingLeft="10dp"
-                        android:id="@+id/spinner_person3"
-                        android:background="@drawable/spinner_style"
-                        android:spinnerMode="dropdown"
-                        android:layout_width="match_parent"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_height="35dp"></Spinner>
-                        </LinearLayout>
-
+                    <!--<Spinner-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:id="@+id/spinner_person2"-->
+                        <!--android:background="@drawable/spinner_style"-->
+                        <!--android:spinnerMode="dropdown"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:layout_marginRight="20dp"-->
+                        <!--android:layout_height="35dp"></Spinner>-->
+                        <!--</LinearLayout>-->
 
 
 
 
 
-                </LinearLayout>
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/unit3"-->
+                        <!--android:visibility="gone"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:id="@+id/unit_name"
-                    android:paddingTop="6dp"
-                    android:textStyle="bold"/>
+                    <!--<TextView-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:id="@+id/textunitthree"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:paddingTop="10dp"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:textAlignment="center"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:text="unit 3"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--/>-->
 
-</LinearLayout>
+                    <!--<Spinner-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:id="@+id/spinner_person3"-->
+                        <!--android:background="@drawable/spinner_style"-->
+                        <!--android:spinnerMode="dropdown"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:layout_marginRight="20dp"-->
+                        <!--android:layout_height="35dp"></Spinner>-->
+                        <!--</LinearLayout>-->
+
+
+
+
+
+
+                <!--</LinearLayout>-->
+
+<!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:paddingLeft="20dp"-->
+    <!--android:paddingRight="20dp"-->
+    <!--android:layout_height="wrap_content">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20dp"-->
+                    <!--android:id="@+id/unit_name"-->
+                    <!--android:paddingTop="6dp"-->
+                    <!--android:textStyle="bold"/>-->
+
+<!--</LinearLayout>-->
 
 
 

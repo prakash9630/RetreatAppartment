@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -26,8 +27,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import project.revision.tap.retre.Adapter.TwoBedroomDelux_adapter;
-import project.revision.tap.retre.Booking;
-import project.revision.tap.retre.Public_Url;
+import project.revision.tap.retre.Booking_process.Booking;
+import project.revision.tap.retre.Main_LandigPage_class.Public_Url;
 import project.revision.tap.retre.R;
 
 /**
@@ -184,6 +185,12 @@ public class TwoBedRoomDeluxe extends AppCompatActivity {
 
                     }
                 });
+
+
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue queue= Volley.newRequestQueue(this);
         queue.add(request);
     }

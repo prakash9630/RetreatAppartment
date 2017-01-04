@@ -13,7 +13,9 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -26,8 +28,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import project.revision.tap.retre.Adapter.Penthouse_swipe_activity;
-import project.revision.tap.retre.Booking;
-import project.revision.tap.retre.Public_Url;
+import project.revision.tap.retre.Booking_process.Booking;
+import project.revision.tap.retre.Main_LandigPage_class.Public_Url;
 import project.revision.tap.retre.R;
 
 /**
@@ -79,7 +81,10 @@ public class PenthouseHimayalaView extends AppCompatActivity {
         title.setTypeface(myTypeface);
 
 
+
         getApi();
+
+
 
 
 
@@ -158,6 +163,8 @@ public class PenthouseHimayalaView extends AppCompatActivity {
 
 
 
+
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -175,12 +182,18 @@ public class PenthouseHimayalaView extends AppCompatActivity {
                         mSecond.loadDataWithBaseURL(null, myHtmlString, "text/html", "UTF-8", null);
 
 
+
+
                     }
                 }
 
 
         );
 
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue queue= Volley.newRequestQueue(this);
         queue.add(request);
 

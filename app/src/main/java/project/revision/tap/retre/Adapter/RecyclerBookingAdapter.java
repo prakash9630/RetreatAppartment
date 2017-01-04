@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-import project.revision.tap.retre.Checkout;
+import project.revision.tap.retre.Booking_process.Checkout;
 
 import project.revision.tap.retre.Pojo.Available_rooms_getter;
 import project.revision.tap.retre.R;
@@ -95,6 +94,7 @@ public class RecyclerBookingAdapter extends RecyclerView.Adapter<BookingHolder> 
                 i.putExtra("Unit_Type",current.getApartmentName());
                 i.putExtra("Unit_Price",""+current.getBookingPrice());
                     i.putExtra("Unit_no",no_of_unit);
+                    i.putExtra("Unit_machinename",current.getUnit_tyep_Machinename());
                     context.startActivity(i);
 
             }}

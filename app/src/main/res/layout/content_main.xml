@@ -7,7 +7,7 @@
 android:weightSum="100"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="project.revision.tap.retre.MainActivity"
+    tools:context=".Main_LandigPage_class.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
 
@@ -99,7 +99,7 @@ android:weightSum="100"
                                 <LinearLayout
                                     android:id="@+id/first_linearlayout"
                                     android:layout_width="match_parent"
-                                    android:layout_height="150dp"
+                                    android:layout_height="145dp"
                                     android:orientation="horizontal"
                                     android:gravity="center"
                                     android:weightSum="1">
@@ -110,10 +110,9 @@ android:weightSum="100"
                                             android:id="@+id/card_view1"
                                             android:elevation="20dp"
                                             android:layout_marginRight="10dp"
-                                            android:layout_weight=".4"
+                                            android:layout_weight=".45"
                                             card_view:cardBackgroundColor="@color/cardview_grey"
-                                            android:layout_marginBottom="@dimen/card_view_margintop"
-                                            android:layout_marginTop="@dimen/card_view_margintop"
+
                                             android:layout_height="@dimen/card_view_height">
 
                                                 <LinearLayout
@@ -144,6 +143,8 @@ android:weightSum="100"
 
                                         </android.support.v7.widget.CardView>
 
+
+
                                         <android.support.v7.widget.CardView
                                             xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                             android:layout_width="0dp"
@@ -151,11 +152,10 @@ android:weightSum="100"
                                             android:elevation="20dp"
                                             card_view:cardBackgroundColor="@color/cardview_grey"
 
-                                            android:layout_marginBottom="@dimen/card_view_margintop"
+
 
                                             android:layout_marginLeft="@dimen/card_view_marginleftright"
-                                            android:layout_weight=".4"
-                                            android:layout_marginTop="@dimen/card_view_margintop"
+                                            android:layout_weight=".45"
                                             android:layout_height="@dimen/card_view_height">
 
 
@@ -204,7 +204,7 @@ android:weightSum="100"
                                 <LinearLayout
                                     android:id="@+id/second_linearlayout"
                                     android:layout_width="match_parent"
-                                    android:layout_height="150dp"
+                                    android:layout_height="145dp"
                                     android:orientation="horizontal"
                                     android:gravity="center"
                                     android:weightSum="1">
@@ -217,9 +217,7 @@ android:weightSum="100"
                                             card_view:cardBackgroundColor="@color/cardview_grey"
 
                                             android:layout_marginRight="10dp"
-                                            android:layout_weight=".4"
-                                            android:layout_marginBottom="@dimen/card_view_margintop"
-                                            android:layout_marginTop="@dimen/card_view_margintop"
+                                            android:layout_weight=".45"
                                             android:layout_height="@dimen/card_view_height">
 
                                                 <LinearLayout
@@ -256,12 +254,10 @@ android:weightSum="100"
                                             android:layout_width="0dp"
                                             android:id="@+id/card_view4"
                                             android:elevation="20dp"
-                                            android:layout_marginBottom="@dimen/card_view_margintop"
                                             card_view:cardBackgroundColor="@color/cardview_grey"
 
                                             android:layout_marginLeft="@dimen/card_view_marginleftright"
-                                            android:layout_weight=".4"
-                                            android:layout_marginTop="@dimen/card_view_margintop"
+                                            android:layout_weight=".45"
                                             android:layout_height="@dimen/card_view_height">
 
                                                 <LinearLayout
@@ -309,7 +305,7 @@ android:weightSum="100"
                                 <LinearLayout
                             android:id="@+id/third_linearlayout"
                             android:layout_width="match_parent"
-                            android:layout_height="150dp"
+                            android:layout_height="145dp"
                             android:orientation="horizontal"
                             android:gravity="center"
                             android:weightSum="1">
@@ -322,9 +318,7 @@ android:weightSum="100"
                                     card_view:cardBackgroundColor="@color/cardview_grey"
 
                                     android:layout_marginRight="10dp"
-                                    android:layout_weight=".4"
-                                    android:layout_marginBottom="@dimen/card_view_margintop"
-                                    android:layout_marginTop="@dimen/card_view_margintop"
+                                    android:layout_weight=".45"
                                     android:layout_height="@dimen/card_view_height">
 
                                         <LinearLayout
@@ -363,12 +357,12 @@ android:weightSum="100"
                                     android:layout_width="0dp"
                                     android:id="@+id/card_view6"
                                     android:elevation="20dp"
-                                    android:layout_marginBottom="@dimen/card_view_margintop"
+
                                     card_view:cardBackgroundColor="@color/cardview_grey"
 
                                     android:layout_marginLeft="@dimen/card_view_marginleftright"
-                                    android:layout_weight=".4"
-                                    android:layout_marginTop="@dimen/card_view_margintop"
+                                    android:layout_weight=".45"
+
                                     android:layout_height="@dimen/card_view_height">
 
                                         <LinearLayout

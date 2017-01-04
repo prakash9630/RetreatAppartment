@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import project.revision.tap.retre.Cultural_places_activity;
-import project.revision.tap.retre.Restaurant_activity;
+import project.revision.tap.retre.Places.Cultural_places_activity;
+import project.revision.tap.retre.Restaurant.Restaurant_activity;
 
 /**
  * Created by prakash on 9/21/2016.
@@ -36,3 +36,4 @@ public class Fragment_adapter extends FragmentStatePagerAdapter {
         return 2;
     }
 }
+

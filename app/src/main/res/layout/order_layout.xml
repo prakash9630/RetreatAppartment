@@ -31,76 +31,57 @@
 
 
 
-            <TextView
-                android:background="@drawable/cell_shape"
+            <!--<TextView-->
+                <!--android:background="@drawable/cell_shape"-->
 
-                android:id="@+id/text_product"
-                android:layout_width="match_parent"
-                android:inputType="textMultiLine"
-                android:layout_height="wrap_content"
+                <!--android:id="@+id/text_product"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:inputType="textMultiLine"-->
+                <!--android:layout_height="wrap_content"-->
 
-                android:padding="5dp"
-                android:textColor="@color/white"
+                <!--android:padding="5dp"-->
+                <!--android:textColor="@color/white"-->
 
-                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
 
+        <!--<TextView-->
+                    <!--android:inputType="textMultiLine"-->
+                    <!--android:background="@drawable/cell_shape"-->
 
+                    <!--android:id="@+id/text_price"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
 
+                    <!--android:padding="5dp"-->
+                    <!--android:textColor="@color/white"-->
 
+                    <!--android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
 
+        <!--<TextView-->
 
+                    <!--android:background="@drawable/cell_shape"-->
+                    <!--android:id="@+id/text_quantity"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
 
-                <TextView
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/cell_shape"
-
-                    android:id="@+id/text_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:padding="5dp"
-                    android:textColor="@color/white"
-
-                    android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
-
-
-
-
-
-
-
-
-                <TextView
-
-                    android:background="@drawable/cell_shape"
-                    android:id="@+id/text_quantity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:padding="5dp"
-                    android:textColor="@color/white"
-                    android:inputType="textMultiLine"
+                    <!--android:padding="5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:inputType="textMultiLine"-->
 
 
-                    android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                    <!--android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
 
+        <!--<TextView-->
+                    <!--android:inputType="textMultiLine"-->
+                    <!--android:background="@drawable/cell_shape"-->
 
+                    <!--android:id="@+id/text_total"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
 
-
-
-
-
-                <TextView
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/cell_shape"
-
-                    android:id="@+id/text_total"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:padding="5dp"
-                    android:textColor="@color/white"
-                    android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+                    <!--android:padding="5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
 
 
 
