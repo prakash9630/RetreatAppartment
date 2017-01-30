@@ -41,7 +41,7 @@ import project.revision.tap.retre.R;
 public class Available_rooms extends AppCompatActivity {
 
     static String url;
-    String start,end,unit1,unit2,unit3;
+    String start, end, unit1, unit2, unit3;
     int unit;
 
 
@@ -52,84 +52,74 @@ public class Available_rooms extends AppCompatActivity {
     ArrayList<Available_rooms_getter> arrayRoom;
 
 
-    String Unit_type,Body,Image,Unit_type_machinename;
+    String Unit_type, Body, Image, Unit_type_machinename;
     int unit_no;
 
     RecyclerView recyclerView;
     RecyclerBookingAdapter adapter;
     LinearLayoutManager mLinearlayout;
     Toolbar toolbar;
-    String roomType="all";
+    String roomType = "all";
     String mUnitname;
     int bookingprice;
-
-
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent=getIntent();
+        Intent intent = getIntent();
         setContentView(R.layout.available_room_layout);
-        start =intent.getExtras().getString("arrival");
-        end=intent.getExtras().getString("departure");
-        unit=intent.getExtras().getInt("unit");
-        unit1=intent.getExtras().getString("u1");
-        unit2=intent.getExtras().getString("u2");
-        unit3=intent.getExtras().getString("u3");
-        pDilog=new ProgressDialog(this);
+        start = intent.getExtras().getString("arrival");
+        end = intent.getExtras().getString("departure");
+        unit = intent.getExtras().getInt("unit");
+
+
+//        unit1=intent.getExtras().getString("u1");   // commented only for sometime
+//        unit2=intent.getExtras().getString("u2");
+//        unit3=intent.getExtras().getString("u3");
+
+        unit1 = "1";
+        unit2 = "1";
+        unit3 = "1";
+
+
+        pDilog = new ProgressDialog(this);
         pDilog.setMessage("Searching.....");
         pDilog.setCancelable(true);
         pDilog.show();
-        toolbar=(Toolbar)findViewById(R.id.available_toolbar_id);
+        toolbar = (Toolbar) findViewById(R.id.available_toolbar_id);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
 
+        recyclerView = (RecyclerView) findViewById(R.id.avilable_room_id);
+
+        roomType = getIntent().getStringExtra("mtype");
+
+        mUnitname = getIntent().getStringExtra("unit_name");
 
 
-        recyclerView=(RecyclerView)findViewById(R.id.avilable_room_id);
-
-            roomType = getIntent().getStringExtra("mtype");
-
-mUnitname=getIntent().getStringExtra("unit_name");
-
-
-
-
-        mLinearlayout=new LinearLayoutManager(this);
-        parameterString="?type="+roomType+"&"
-                +"rooms_group_size1="
-                + unit1+"&"+"rooms_group_size2="
-                + unit2+"&"+"rooms_group_size3="
+        mLinearlayout = new LinearLayoutManager(this);
+        parameterString = "?type=" + roomType + "&"
+                + "rooms_group_size1="
+                + unit1 + "&" + "rooms_group_size2="
+                + unit2 + "&" + "rooms_group_size3="
                 + unit3;
 
 
-
-        url="https://www.retreatservicedapartments.com/androidapi/v1/retreatapp_availability_search/" + start + "/" + end + "/"
-                + unit+parameterString;
-
+        url = "https://www.retreatservicedapartments.com/androidapi/v1/retreatapp_availability_search/" + start + "/" + end + "/"
+                + unit + parameterString;
 
 
-        Log.d("myurl",url);
-
-
-
-
-
-
-
-
-
+        Log.d("myurl", url);
 
 
         sendRequest();
 
     }
 
-    void  alertDilog()
-    {
+    void noRoomDilog() {
         AlertDialog alertDialog = new AlertDialog.Builder(
                 Available_rooms.this).create();
 
@@ -137,7 +127,37 @@ mUnitname=getIntent().getStringExtra("unit_name");
         alertDialog.setTitle("Sorry");
 
         // Setting Dialog Message
-        alertDialog.setMessage(" For the specified dates, all units of "+mUnitname+" are booked. Please select available units below.");
+        alertDialog.setMessage("Unfortunately no units are available - try different dates if possible.");
+
+        // Setting Icon to Dialog
+//        alertDialog.setIcon(R.drawable.tick);
+
+        // Setting OK Button
+        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to execute after dialog closed
+
+                Intent ii=new Intent(Available_rooms.this,Booking.class);
+                startActivity(ii);
+                finish();
+
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
+
+    }
+
+    void alertDilog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(
+                Available_rooms.this).create();
+
+        // Setting Dialog Title
+        alertDialog.setTitle("Sorry");
+
+        // Setting Dialog Message
+        alertDialog.setMessage(" For the specified dates, all units of " + mUnitname + " are booked. Please select available units below.");
 
         // Setting Icon to Dialog
 //        alertDialog.setIcon(R.drawable.tick);
@@ -155,60 +175,54 @@ mUnitname=getIntent().getStringExtra("unit_name");
 
     }
 
-    void sendRequest()
-    {
-        JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, new Response.Listener<JSONArray>() {
+    void sendRequest() {
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
 
-arrayRoom=new ArrayList<>();
-                for (int i=0;i<response.length();i++)
-                {
+                arrayRoom = new ArrayList<>();
+                for (int i = 0; i < response.length(); i++) {
 
                     try {
-                        JSONObject obj=response.getJSONObject(i);
-                     if (obj!=null) {
-
-                         int wasnotavailable = obj.getInt("was_not_available");
-                         String notfund = String.valueOf(wasnotavailable);
-
-                         Unit_type = obj.getString("unit_type");
-                         Unit_type_machinename = obj.getString("unit_type_machine_name");
-                         if (notfund == "1") {
-                             alertDilog();
-                         }
 
 
-                         Double Booking_price = obj.getDouble("booking_price");
-                         bookingprice = Booking_price.intValue();
+                            JSONObject obj = response.getJSONObject(i);
 
-                         JSONObject nestedObj = obj.getJSONObject("unit_type_details");
+                            int wasnotavailable = obj.getInt("was_not_available");
+                            String notfund = String.valueOf(wasnotavailable);
 
-
-                         Body = nestedObj.getString("body");
-                         Image = nestedObj.getString("photo");
-
-
-                         JSONObject UnitObj = obj.getJSONObject("units");
-                         unit_no = UnitObj.length();
+                            Unit_type = obj.getString("unit_type");
+                            Unit_type_machinename = obj.getString("unit_type_machine_name");
+                            if (notfund == "1") {
+                                alertDilog();
+                            }
 
 
-                         availableRooms = new Available_rooms_getter(Unit_type_machinename, Unit_type, bookingprice, Body, Image, unit_no);
-                         arrayRoom.add(availableRooms);
+                            Double Booking_price = obj.getDouble("booking_price");
+                            bookingprice = Booking_price.intValue();
+
+                            JSONObject nestedObj = obj.getJSONObject("unit_type_details");
 
 
-                         pDilog.dismiss();
+                            Body = nestedObj.getString("body");
+                            Image = nestedObj.getString("photo");
 
 
-                         adapter = new RecyclerBookingAdapter(arrayRoom, Available_rooms.this);
-                         recyclerView.setAdapter(adapter);
-                         recyclerView.setLayoutManager(mLinearlayout);
-                     }
-                        else
-                     {
-                         Toast.makeText(Available_rooms.this, response.toString(), Toast.LENGTH_SHORT).show();
-                     }
+                            JSONObject UnitObj = obj.getJSONObject("units");
+                            unit_no = UnitObj.length();
+
+
+                            availableRooms = new Available_rooms_getter(Unit_type_machinename, Unit_type, bookingprice, Body, Image, unit_no);
+                            arrayRoom.add(availableRooms);
+
+
+                            pDilog.dismiss();
+
+
+                            adapter = new RecyclerBookingAdapter(arrayRoom, Available_rooms.this);
+                            recyclerView.setAdapter(adapter);
+                            recyclerView.setLayoutManager(mLinearlayout);
 
 
 
@@ -219,6 +233,7 @@ arrayRoom=new ArrayList<>();
                         e.printStackTrace();
 
                         pDilog.dismiss();
+                        noRoomDilog();
                     }
                 }
 
@@ -227,7 +242,7 @@ arrayRoom=new ArrayList<>();
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Available_rooms.this,"Something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Available_rooms.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 pDilog.dismiss();
 
             }
@@ -239,9 +254,8 @@ arrayRoom=new ArrayList<>();
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        RequestQueue queue= Volley.newRequestQueue(this);
+        RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
-
 
 
     }

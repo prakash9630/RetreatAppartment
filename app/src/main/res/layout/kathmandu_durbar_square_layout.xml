@@ -11,7 +11,7 @@
 
         android:theme="@style/ToolbarStyle"
         android:background="@color/thembluecolor"
-        app:title="Durbar square"
+        app:title="Kathmandu Durbar Square"
         app:titleTextColor="@color/white"
         android:layout_height="wrap_content">
 

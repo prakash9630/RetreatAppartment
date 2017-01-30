@@ -83,8 +83,8 @@ public class Checkout extends AppCompatActivity {
     ArrayList<String> countries = new ArrayList<String>();
 
     PayPalConfiguration m_configuration;
-        String mClintId="AZgk2hCu3i968ZBiuXHzPgabxExbdxbeO2q5U4cWObpzMdIb8qgVAlV3CKAT";    // this is for live account
-//    String mClintId="AbMfQTit8DAiwk_VUgJUJFHPtbTRWi5s-vanrqcI1ruXbfwDEmu3ysYk9UyVTLCB2bVBqp7ljP37zZAZ";  //this is sandbox account
+//        String mClintId="AZgk2hCu3i968ZBiuXHzPgabxExbdxbeO2q5U4cWObpzMdIb8qgVAlV3CKAT";    // this is for live account
+    String mClintId="AbMfQTit8DAiwk_VUgJUJFHPtbTRWi5s-vanrqcI1ruXbfwDEmu3ysYk9UyVTLCB2bVBqp7ljP37zZAZ";  //this is sandbox account
     Intent mServices;
     int m_paypalRequestCode=1;
 
@@ -123,7 +123,7 @@ public class Checkout extends AppCompatActivity {
 
 
         m_configuration=new PayPalConfiguration()
-                .environment(PayPalConfiguration.ENVIRONMENT_PRODUCTION)
+                .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
                 .clientId(mClintId);
         mServices=new Intent(this, PayPalService.class);
         mServices.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,m_configuration);
@@ -214,7 +214,7 @@ public class Checkout extends AppCompatActivity {
                     if (isOnline()) {
 
 
-                        Toast.makeText(Checkout.this, countryCode, Toast.LENGTH_SHORT).show();
+
 
                         hitOrder();
 
@@ -283,8 +283,8 @@ public class Checkout extends AppCompatActivity {
                 try {
                     JSONObject obj=new JSONObject(response);
 
-                    String profile_id=obj.getString("profile_id");
-                    String totalamount=obj.getString("total_payment_amount");
+//                    String profile_id=obj.getString("profile_id");
+//                    String totalamount=obj.getString("total_payment_amount");
                     JSONObject order=obj.getJSONObject("order_id");
                     order_id=order.getInt("order_id");
                     created=order.getInt("created");
@@ -299,7 +299,7 @@ public class Checkout extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Checkout.this, error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Checkout.this,"Error occur", Toast.LENGTH_SHORT).show();
             }
         })
         {
@@ -333,6 +333,10 @@ public class Checkout extends AppCompatActivity {
         };
         RequestQueue queue=Volley.newRequestQueue(this);
         queue.add(request);
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
     }
 
 
@@ -345,10 +349,10 @@ public class Checkout extends AppCompatActivity {
                 Checkout.this).create();
 
         // Setting Dialog Title
-        alertDialog.setTitle("Payment Approvel");
+        alertDialog.setTitle("Payment approval");
 
         // Setting Dialog Message
-        alertDialog.setMessage("Your Payment has been made succesfully");
+        alertDialog.setMessage("Your payment has been made successfully");
 
         // Setting Icon to Dialog
 //        alertDialog.setIcon(R.drawable.tick);
@@ -359,6 +363,7 @@ public class Checkout extends AppCompatActivity {
                 Intent i=new Intent(Checkout.this,Complet_paymetnt.class);
                 i.putExtra("order_id",""+order_id);
                 i.putExtra("unitType",mUnitType);
+                i.putExtra("mEmail",mEmail.getText().toString());
                 startActivity(i);
 
 

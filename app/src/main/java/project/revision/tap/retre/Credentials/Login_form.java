@@ -43,7 +43,7 @@ public class Login_form extends AppCompatActivity {
     TextView mForgot;
     String username;
     Toolbar login_toolbar;
-    String sessionid,sessionname,token,Uname,mail,mCookie;
+    String sessionid,sessionname,token,Uname,mail,mCookie,userid;
 
 
 
@@ -143,6 +143,7 @@ public class Login_form extends AppCompatActivity {
 
                             Uname = user.getString("name");
                             mail = user.getString("mail");
+                            userid=user.getString("uid");
 
 
                             mCookie = sessionname+ "=" + sessionid;
@@ -176,6 +177,7 @@ SharedPreferences preferences=getSharedPreferences("Authentication", Context.MOD
                 editor.putString("username",username);
                 editor.putString("email",mail);
                 editor.putString("cookies",mCookie);
+                editor.putString("uid",userid);
                 editor.commit();
 
 
@@ -190,6 +192,8 @@ SharedPreferences preferences=getSharedPreferences("Authentication", Context.MOD
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(Login_form.this,"wrong username or password", Toast.LENGTH_LONG).show();
+
+
 
 
             }

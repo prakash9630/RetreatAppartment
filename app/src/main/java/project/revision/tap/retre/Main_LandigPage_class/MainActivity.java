@@ -1,17 +1,14 @@
 package project.revision.tap.retre.Main_LandigPage_class;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,43 +27,53 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Locale;
+import java.util.ArrayList;
 
-import me.relex.circleindicator.CircleIndicator;
-import project.revision.tap.retre.Adapter.customSwip;
 import project.revision.tap.retre.Booking_process.Booking;
+import project.revision.tap.retre.Booking_process.Order;
 import project.revision.tap.retre.Chat.Chat_start;
+
 import project.revision.tap.retre.Data.Channel;
 import project.revision.tap.retre.Data.Item;
-import project.revision.tap.retre.Gallary_activity.Gallary_activity;
 import project.revision.tap.retre.Credentials.Login_form;
+import project.revision.tap.retre.Gallary_activity.Album_View_Gallery;
+import project.revision.tap.retre.Pojo.Main_sliderData;
 import project.revision.tap.retre.R;
 import project.revision.tap.retre.Services.WeatherServiceCallback;
 import project.revision.tap.retre.Services.YahooWeatherService;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,WeatherServiceCallback {
-    ViewPager viewPager;
-    project.revision.tap.retre.Adapter.customSwip customSwip;
-    static String url= Public_Url.Price;
+
+    static String url=Public_Url.galleryAlbum;
     LinearLayout mLinear1,mLinear2,mLinear3,mLinear4,mLinear6,mLinear5;
     LinearLayout mContact,mBook;
-    String p_night,p_week,p_month;
-    String tbhv_night,tbhv_week,tbhv_month;
-    String obe_night,obe_week,obe_month;
-    String tbd_night,tbd_week,tbd_month;
-    String tbs_night,tbs_week,tbs_month;
+
     NavigationView navigationView;
     TextView temperature;
     TextView condition;
     TextView location;
     YahooWeatherService service;
     LinearLayout weatherlayout;
+
+    SliderLayout slider;
+    ArrayList <Main_sliderData> data;
+    Main_sliderData sliderdata;
+
+    String nid,machinename;
+
+
+
+
 
 
 
@@ -76,16 +83,25 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
+
+        slider=(SliderLayout)findViewById(R.id.slider_rooms);
+
+
+
+
+
+
+
+
+
+
         mLinear1=(LinearLayout)findViewById(R.id.linear1);
         mLinear2=(LinearLayout)findViewById(R.id.linear2);
         mLinear3=(LinearLayout)findViewById(R.id.linear3);
         mLinear4=(LinearLayout)findViewById(R.id.linear4);
         mLinear5=(LinearLayout)findViewById(R.id.linear5);
-        weatherlayout=(LinearLayout)findViewById(R.id.weather_layout);
 
         mLinear6=(LinearLayout)findViewById(R.id.linear6);
 
@@ -94,26 +110,12 @@ public class MainActivity extends AppCompatActivity
         temperature=(TextView)findViewById(R.id.temperature_id);
         condition=(TextView)findViewById(R.id.condition);
         location=(TextView)findViewById(R.id.place);
-
-        service=new YahooWeatherService(this);
-
-        if (isOnline())
-        {
-            service.refreshWeather("Kathmandu");
-            weatherlayout.setBackgroundColor(Color.parseColor("#50000000"));
-
-        }
-        else
-        {
-
-            weatherlayout.setVisibility(View.INVISIBLE);
-        }
-
+        weatherlayout=(LinearLayout)findViewById(R.id.weather_layout);
 
 
         Runtime.getRuntime().gc();
-        getPrice();
-//hideItem();
+        hideItem();
+        sendRequest();
 
         mContact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +146,8 @@ public class MainActivity extends AppCompatActivity
         mLinear3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getDirection();
+                Intent i=new Intent(MainActivity.this,Apartment_location.class);
+                startActivity(i);
 
             }
         });
@@ -152,7 +155,7 @@ public class MainActivity extends AppCompatActivity
         mLinear4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,Gallary_activity.class);
+                Intent i=new Intent(MainActivity.this,Album_View_Gallery.class);
                 startActivity(i);
             }
         });
@@ -168,7 +171,7 @@ public class MainActivity extends AppCompatActivity
         mLinear6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,Amenities_activity.class);
+                Intent i=new Intent(MainActivity.this,Facilities_activity.class);
                 startActivity(i);
             }
         });
@@ -180,14 +183,32 @@ public class MainActivity extends AppCompatActivity
 
 
 
+        service=new YahooWeatherService(this);
 
-mBook.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Intent i=new Intent(MainActivity.this,Booking.class);
-        startActivity(i);
-    }
-});
+        if (isOnline())
+        {
+            service.refreshWeather("Kathmandu");
+            weatherlayout.setBackgroundColor(Color.parseColor("#50000000"));
+
+        }
+        else
+        {
+
+            weatherlayout.setVisibility(View.INVISIBLE);
+        }
+
+
+
+
+
+
+        mBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,Booking.class);
+                startActivity(i);
+            }
+        });
 
 
 
@@ -198,12 +219,7 @@ mBook.setOnClickListener(new View.OnClickListener() {
 
 
 
-        viewPager=(ViewPager)findViewById(R.id.fragment_viewpager);
-        CircleIndicator indicator = (CircleIndicator)findViewById(R.id.inciator);
 
-        customSwip=new customSwip(this);
-        viewPager.setAdapter(customSwip);
-        indicator.setViewPager(viewPager);
 
 
 
@@ -245,110 +261,140 @@ mBook.setOnClickListener(new View.OnClickListener() {
     }
 
 
-    void getPrice()
-    {
-
-
-        final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, new Response.Listener<JSONArray>() {
+    void sendRequest() {
+        final JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, new Response.Listener<JSONArray>() {
             @Override
-            public void onResponse(JSONArray response) {
+            public void onResponse(final JSONArray response) {
 
-                for (int i = 0; i < response.length(); i++)
-                {
+
+data=new ArrayList<>();
+
+
+                for (int i = 0; i < response.length(); i++) {
+
 
                     try {
-                        JSONObject object=response.getJSONObject(i);
-                        String night=object.getString("Base Price");
-                        String week=object.getString("Base Price Week");
-                        String month=object.getString("Base Price Month");
-                        String room=object.getString("Room Type");
 
 
 
-                        if (room.equals("Penthouse Himalaya View"))
-                        {
-                            p_night=night;
-                            p_week=week;
-                            p_month=month;
+                        final JSONObject obj = response.getJSONObject(i);
+                        if (obj != null) {
+
+                            sliderdata=new Main_sliderData();
+
+
+
+
+
+                          sliderdata.setImage(obj.getString("image_url"));
+                            sliderdata.setRoomname(obj.getString("Room Type"));
+
+                             sliderdata.setNid(obj.getString("Nid"));
+                            sliderdata.setNid(obj.getString("machine_name"));
+
+                            data.add(sliderdata);
+
+                            final TextSliderView textSliderView = new TextSliderView(MainActivity.this);
+                            textSliderView
+                                    .description(obj.getString("Room Type"))
+                                    .image(obj.getString("image_url"));
+
+//
+//                            textSliderView.bundle(new Bundle());
+//                            textSliderView.getBundle()
+//                                    .putString("extra",obj.getString("Nid"));
+
+
+
+
+
+
+
+                                textSliderView.setOnSliderClickListener(new BaseSliderView.OnSliderClickListener() {
+                                    @Override
+                                    public void onSliderClick(BaseSliderView slider) {
+
+Intent ii=new Intent(MainActivity.this,AppartmentType.class);
+                                        startActivity(ii);
+
+                                    }
+                                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                slider.stopAutoCycle();
+                slider.addSlider(textSliderView);
+
+
+
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "NO data found", Toast.LENGTH_SHORT).show();
                         }
-                        if (room.equals("3 Bedroom Himalaya View"))
-                        {
-                            tbhv_night=night;
-                            tbhv_week=week;
-                            tbhv_month=month;
-                        }
-                        if (room.equals("1 Bedroom Executive"))
-                        {
-                            obe_night=night;
-                            obe_week=week;
-                            obe_month=month;
-                        }
-                        if (room.equals("2 Bedroom Deluxe"))
-                        {
-                            tbd_night=night;
-                            tbd_week=week;
-                            tbd_month=month;
-                        }
-                        if (room.equals("2 Bedroom Standard"))
-                        {
-                            tbs_night=night;
-                            tbs_week=week;
-                            tbs_month=month;
-                        }
-
-
-
-                        SharedPreferences sharedPreferences=getSharedPreferences("price", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor=sharedPreferences.edit();
-                        editor.putString("p_night",p_night);
-                        editor.putString("p_week",p_week);
-                        editor.putString("p_month",p_month);
-
-                        editor.putString("tbhv_night",tbhv_night);
-                        editor.putString("tbhv_week",tbhv_week);
-                        editor.putString("tbhv_month",tbhv_month);
-
-                        editor.putString("tbd_night",tbd_night);
-                        editor.putString("tbd_week",tbd_week);
-                        editor.putString("tbd_month",tbd_month);
-
-                        editor.putString("obe_night",obe_night);
-                        editor.putString("obe_week",obe_week);
-                        editor.putString("obe_month",obe_month);
-
-                        editor.putString("tbs_night",tbs_night);
-                        editor.putString("tbs_week",tbs_week);
-                        editor.putString("tbs_month",tbs_month);
-
-                        editor.commit();
 
 
                     } catch (JSONException e) {
-                        e.printStackTrace();
+                       e.printStackTrace();
                     }
+
+
+                    slider.setPresetTransformer(SliderLayout.Transformer.FlipHorizontal);
+                    slider.setPresetIndicator(SliderLayout.PresetIndicators.Right_Bottom);
+//                    slider.setCustomAnimation(new DescriptionAnimation());
+                    slider.setDuration(50);
+
+
+
                 }
 
+
+
+
+
+
+
             }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this,"Check your internet", Toast.LENGTH_SHORT).show();
 
 
+            }
+        });
 
-                    }
-                });
 
         request.setRetryPolicy(new DefaultRetryPolicy(
                 5000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        RequestQueue quee= Volley.newRequestQueue(this);
-        quee.add(request);
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(request);
 
 
     }
+
+
+
 
     private void destroyCookies()
     {
@@ -367,47 +413,24 @@ mBook.setOnClickListener(new View.OnClickListener() {
         String mCookies = preferences.getString("cookies",null);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         Menu nav_Menu = navigationView.getMenu();
-//        if (mCookies != null)
-//        {
-//            nav_Menu.findItem(R.id.login).setVisible(false);
-//        }
-//        else
-//        {
-//            nav_Menu.findItem(R.id.nav_logout).setVisible(false);
-//
-//
-//            nav_Menu.findItem(R.id.login).setVisible(true);
-//
-//        }
+        if (mCookies != null)
+        {
+            nav_Menu.findItem(R.id.login).setVisible(false);
+        }
+        else
+        {
+            nav_Menu.findItem(R.id.nav_logout).setVisible(false);
+            nav_Menu.findItem(R.id.nav_order).setVisible(false);
+
+            nav_Menu.findItem(R.id.login).setVisible(true);
+
+        }
 
 
     }
 
 
 
-void getDirection()
-    {
-        String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?daddr=%f,%f (%s)",27.713594, 85.298008, "Retreat Serviced Apartments");
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-        intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
-        try
-        {
-            startActivity(intent);
-        }
-        catch(ActivityNotFoundException ex)
-        {
-            try
-            {
-                Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                startActivity(unrestrictedIntent);
-            }
-            catch(ActivityNotFoundException innerEx)
-            {
-                Toast.makeText(MainActivity.this, "Please install a maps application", Toast.LENGTH_LONG).show();
-            }
-        }
-
-    }
 
 
 
@@ -418,6 +441,7 @@ void getDirection()
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            finish();
         }
     }
 
@@ -441,7 +465,7 @@ void getDirection()
             startActivity(i);
 
         } else if (id == R.id.nav_gallery) {
-            Intent i=new Intent(this,Gallary_activity.class);
+            Intent i=new Intent(this,Album_View_Gallery.class);
             startActivity(i);
 
         }
@@ -465,34 +489,40 @@ void getDirection()
         }
 
         else if (id == R.id.nav_amenities) {
-            Intent i=new Intent(this,Amenities_activity.class);
+            Intent i=new Intent(this,Facilities_activity.class);
             startActivity(i);
 
         }
         else if (id == R.id.nav_location) {
-            getDirection();
+            Intent i=new Intent(MainActivity.this,Apartment_location.class);
+            startActivity(i);
 
 
 
         }
-//        else if (id == R.id.nav_logout) {
-//            destroyCookies();
-//            hideItem();
-//
-//
-//
-//        }
+        else if (id == R.id.nav_logout) {
+            destroyCookies();
+            hideItem();
 
+
+
+        }
+        else if (id == R.id.nav_order) {
+            Intent i=new Intent(MainActivity.this,Order.class);
+            startActivity(i);
+
+
+        }
         else if (id == R.id.nav_feedback) {
             Intent i=new Intent(this,FeedBack.class);
             startActivity(i);
 
         }
-//        else if (id == R.id.login) {
-//            Intent i=new Intent(this,Login_form.class);
-//            startActivity(i);
-//
-//        }
+        else if (id == R.id.login) {
+            Intent i=new Intent(this,Login_form.class);
+            startActivity(i);
+
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

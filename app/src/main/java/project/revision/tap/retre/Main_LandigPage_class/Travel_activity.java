@@ -41,7 +41,7 @@ public class                                                                    
         adapter=new Fragment_adapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.addTab(tabLayout.newTab().setText("Places"));
-        tabLayout.addTab(tabLayout.newTab().setText("POI"));
+        tabLayout.addTab(tabLayout.newTab().setText("Experience Deal"));
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

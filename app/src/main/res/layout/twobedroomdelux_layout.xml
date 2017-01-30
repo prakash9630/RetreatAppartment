@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbd_toolbar"
+
+        android:theme="@style/ToolbarStyle"
+        app:titleTextColor="@color/white"
         android:background="@color/thembluecolor"
-        android:layout_height="60dp">
-
-        <TextView
-            android:id="@+id/tbd_title"
-            android:textColor="@color/white"
-            android:ellipsize="end"
-
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/twobedroomdroomdelux"
-            android:textSize="23dp"
-
-            />
-
-
-
-
-
-    </LinearLayout>
+        ></android.support.v7.widget.Toolbar>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -93,13 +93,13 @@ public class FeedBack extends AppCompatActivity {
         {
           if(isOnline())
           {
-              Toast.makeText(FeedBack.this, "Validation is accurate", Toast.LENGTH_SHORT).show();
+
 
 
               Intent Email = new Intent(Intent.ACTION_SEND);
 
               Email.putExtra(Intent.EXTRA_EMAIL, new String[] { "info@retreatapartment.com" });
-              Email.putExtra(Intent.EXTRA_SUBJECT, "Feedback form "+mName.getText().toString());
+              Email.putExtra(Intent.EXTRA_SUBJECT, "Android Feedback form "+mName.getText().toString());
               Email.putExtra(Intent.EXTRA_TEXT, message);
               Email.setType("message/rfc822");
               try {

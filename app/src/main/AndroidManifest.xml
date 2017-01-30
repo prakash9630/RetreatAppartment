@@ -55,13 +55,6 @@
                 android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
         <activity
-            android:name=".Gallary_activity.Gallary_activity"
-            >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Main_LandigPage_class.MainActivity" />
-        </activity>
-        <activity
             android:name=".Main_LandigPage_class.AppartmentType"
             android:hardwareAccelerated="false">
             <meta-data
@@ -80,7 +73,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
-        <activity android:name=".Main_LandigPage_class.Amenities_activity">
+        <activity android:name=".Main_LandigPage_class.Facilities_activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Main_LandigPage_class.MainActivity" />
@@ -154,13 +147,12 @@
         android:value=".Main_LandigPage_class.Travel_activity" />
 </activity>
 
-        <activity android:name=".Restaurant.Bamboo">
+        <activity android:name=".Restaurant.Amigos">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Main_LandigPage_class.Travel_activity" />
 
         </activity>
-        <activity android:name=".Gallary_activity.ImageViewPager" android:configChanges="orientation|keyboardHidden|screenSize"></activity>
         <activity android:name=".Credentials.Sign_up"></activity>
 
 
@@ -177,12 +169,16 @@
                 android:value=".Booking_process.Booking" />
 
         </activity>
+
+
         <activity android:name=".Booking_process.Order">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Booking_process.Checkout" />
+                android:value=".Main_LandigPage_class.MainActivity" />
         </activity>
+
+
 
         <activity android:name=".Booking_process.Checkout">
 
@@ -197,6 +193,41 @@
 
         <activity android:name=".Chat.Chat_start"></activity>
         <activity android:name=".Main_LandigPage_class.Complet_paymetnt"></activity>
+
+        <activity android:name=".Main_LandigPage_class.Apartment_location">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Main_LandigPage_class.MainActivity" />
+
+        </activity>
+        <activity android:name=".Booking_process.ViewDetailOrder">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Booking_process.Order" />
+        </activity>
+
+
+
+
+
+        <activity android:name=".Gallary_activity.Album_View_Gallery">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Main_LandigPage_class.MainActivity" />
+        </activity>
+
+        <activity android:name=".Gallary_activity.Gallery_album">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Gallary_activity.Album_View_Gallery" />
+
+
+        </activity>
+        <activity android:name=".Main_LandigPage_class.Appartment_detail"></activity>
+
+
     </application>
 
 </manifest>

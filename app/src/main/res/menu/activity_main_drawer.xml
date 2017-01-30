@@ -3,25 +3,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <!--<item android:title="YOU ARE LOGGED IN">-->
-    <!--<menu>-->
+    <item android:title="YOU ARE LOGGED IN">
+    <menu>
 
-        <!--<item-->
-            <!--android:id="@+id/nav_logout"-->
+        <item
+            android:id="@+id/nav_logout"
 
-            <!--android:title="Logout" />-->
+            android:title="Logout" />
+
+        <item
+            android:id="@+id/nav_order"
+
+            android:title="Order" />
 
 
 
-    <!--</menu>-->
-    <!--</item>-->
+
+    </menu>
+    </item>
 
     <group android:checkableBehavior="single">
 
-        <!--<item-->
-            <!--android:id="@+id/login"-->
+        <item
+            android:id="@+id/login"
 
-            <!--android:title="Login" />-->
+            android:title="Login" />
 
 
 

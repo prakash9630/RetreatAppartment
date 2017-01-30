@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/room_title"
+        android:theme="@style/ToolbarStyle"
+        android:background="@color/thembluecolor"
+
+        app:titleTextColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider_apartmetn"
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+    </com.daimajia.slider.library.SliderLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/subboby_room"
+                android:padding="20dp"
+                android:layout_marginLeft="@dimen/marginfortext"
+                android:layout_marginRight="@dimen/marginfortext"
+                android:layout_marginTop="@dimen/marginfortext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></WebView>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <WebView
+                android:layout_marginLeft="@dimen/marginfortext"
+                android:layout_marginRight="@dimen/marginfortext"
+
+
+                android:id="@+id/body_room"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"></WebView>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+        <Button
+            android:id="@+id/roombook_btn"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:theme="@style/MyButton"
+            android:textColor="@color/white"
+            android:text="BOOK NOW"/>
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

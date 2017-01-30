@@ -100,15 +100,15 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
 
        mType=getIntent().getStringExtra("book");
         mUnitname=getIntent().getStringExtra("unit_name");
-//        if (mUnitname!=null) {
-//
-//
-//            mUnittypename.setText(mUnitname + " was selected");
-//        }
-//        else
-//        {
-//            mUnittypename.setVisibility(View.GONE);
-//        }
+        if (mUnitname!=null) {
+
+
+            mUnittypename.setText(mUnitname + " was selected");
+        }
+        else
+        {
+            mUnittypename.setVisibility(View.GONE);
+        }
 
 
 
@@ -287,7 +287,7 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
             Date currentdate=df.parse(current);
 
             if (startingDate.equals(currentdate))
-                Toast.makeText(Booking.this, "Please select arrival date after current date", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Booking.this, "Booking can only start from 1 day in advance", Toast.LENGTH_SHORT).show();
             else if(date1.after(startingDate))
             {
 
@@ -319,7 +319,7 @@ public class Booking extends AppCompatActivity  implements AdapterView.OnItemSel
 
             }
             else
-                Toast.makeText(Booking.this, "Departure should be grater than arrival date", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Booking.this, "Departure date should be greater than the arrival date", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e)
         {
