@@ -83,8 +83,8 @@ public class Checkout extends AppCompatActivity {
     ArrayList<String> countries = new ArrayList<String>();
 
     PayPalConfiguration m_configuration;
-//        String mClintId="AZgk2hCu3i968ZBiuXHzPgabxExbdxbeO2q5U4cWObpzMdIb8qgVAlV3CKAT";    // this is for live account
-    String mClintId="AbMfQTit8DAiwk_VUgJUJFHPtbTRWi5s-vanrqcI1ruXbfwDEmu3ysYk9UyVTLCB2bVBqp7ljP37zZAZ";  //this is sandbox account
+        String mClintId="AZgk2hCu3i968ZBiuXHzPgabxExbdxbeO2q5U4cWObpzMdIb8qgVAlV3CKAT";    // this is for live account
+//    String mClintId="AbMfQTit8DAiwk_VUgJUJFHPtbTRWi5s-vanrqcI1ruXbfwDEmu3ysYk9UyVTLCB2bVBqp7ljP37zZAZ";  //this is sandbox account
     Intent mServices;
     int m_paypalRequestCode=1;
 
@@ -123,7 +123,7 @@ public class Checkout extends AppCompatActivity {
 
 
         m_configuration=new PayPalConfiguration()
-                .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+                .environment(PayPalConfiguration.ENVIRONMENT_PRODUCTION)
                 .clientId(mClintId);
         mServices=new Intent(this, PayPalService.class);
         mServices.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,m_configuration);

@@ -25,16 +25,20 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="20dp"
+                android:textAllCaps="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="pehthouse"
+
+
                 android:id="@+id/apartment_name"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="400"
-
+                android:textColor="#50000000"
+android:textStyle=""
                 android:id="@+id/price_unit"/>
 
 

@@ -51,7 +51,7 @@ android:text="@string/Location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#ffffff"
-                android:text="Get diretion"
+                android:text="Get direction"
                 android:textAllCaps="false"
                 android:theme="@style/MyButton"/>
 

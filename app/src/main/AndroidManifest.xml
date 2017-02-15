@@ -37,11 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Rooms.OneBedroomExecutive" />
-        <activity android:name=".Rooms.PenthouseHimayalaView" />
-        <activity android:name=".Rooms.ThreeBedRoomHimayalaView" />
-        <activity android:name=".Rooms.TwoBedRoomDeluxe" />
-        <activity android:name=".Rooms.TwoBedroomStandard" />
+
         <activity
             android:name=".Main_LandigPage_class.About_Us"
             >

@@ -52,7 +52,7 @@
             <EditText
                 android:id="@+id/username_id"
                 android:textCursorDrawable="@null"
-                android:drawableLeft="@drawable/username"
+                android:drawableLeft="@drawable/user"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/shape"
@@ -74,7 +74,7 @@
                 android:padding="10dp"
                 android:inputType="textPassword"
                 android:hint="Password"
-                />
+           />
 
             <TextView
                 android:id="@+id/forgot_id"

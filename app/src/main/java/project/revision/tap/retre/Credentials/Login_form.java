@@ -39,7 +39,7 @@ import project.revision.tap.retre.R;
  */
 public class Login_form extends AppCompatActivity {
     EditText mUsername,mPassword;
-    Button mLogin,mSignup;
+    Button mLogin;
     TextView mForgot;
     String username;
     Toolbar login_toolbar;

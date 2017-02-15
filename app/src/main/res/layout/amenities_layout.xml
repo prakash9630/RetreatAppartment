@@ -21,14 +21,19 @@
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
-            <ImageView
+            <WebView
+                android:padding="5dp"
+                android:id="@+id/services_id"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/facilities"
+                android:layout_height="match_parent">
 
-                />
+
+            </WebView>
+
+
 
 
         </LinearLayout>

@@ -3,6 +3,7 @@ package project.revision.tap.retre.Main_LandigPage_class;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -192,6 +193,7 @@ ImageView image;
 
 
 
+
     public ApartmetnHolder(View itemView,Context context,ArrayList<Appartment_type_data> data) {
         super(itemView);
         this.context=context;
@@ -201,6 +203,15 @@ ImageView image;
         image=(ImageView)itemView.findViewById(R.id.apartment_img);
         uniteType=(TextView)itemView.findViewById(R.id.apartment_name);
         unitPrice=(TextView)itemView.findViewById(R.id.price_unit);
+
+
+
+
+
+
+
+
+
     }
 
 

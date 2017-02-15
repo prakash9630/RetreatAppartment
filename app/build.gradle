@@ -9,8 +9,8 @@ android {
         applicationId "project.revision.tap.retre"
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 111
+        versionName "2.1"
         multiDexEnabled true
     }
     buildTypes {
@@ -54,6 +54,7 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:10.0.1'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.slider:library:1.1.5@aar'
+    compile 'org.jsoup:jsoup:1.10.2'
 }
 
 apply plugin: 'com.google.gms.google-services'

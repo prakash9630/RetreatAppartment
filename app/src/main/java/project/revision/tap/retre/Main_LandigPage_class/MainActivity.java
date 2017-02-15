@@ -1,16 +1,24 @@
 package project.revision.tap.retre.Main_LandigPage_class;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -34,6 +42,8 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.util.ArrayList;
 
@@ -86,12 +96,23 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
 
+
+
+
         slider=(SliderLayout)findViewById(R.id.slider_rooms);
 
-
-
-
-
+//
+//        PackageInfo pInfo = null;
+//        try {
+//            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+//        } catch (PackageManager.NameNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        String version = pInfo.versionName;
+//
+//        int verCode = pInfo.versionCode;
+//
+//        Toast.makeText(MainActivity.this, ""+version+"   and   "+verCode, Toast.LENGTH_SHORT).show();
 
 
 
@@ -434,6 +455,7 @@ Intent ii=new Intent(MainActivity.this,AppartmentType.class);
 
 
 
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -545,4 +567,16 @@ Intent ii=new Intent(MainActivity.this,AppartmentType.class);
     public void serviceFalure(Exception exception) {
         weatherlayout.setVisibility(View.GONE);
     }
-}
+
+
+
+
+
+   }
+
+
+
+
+
+
+

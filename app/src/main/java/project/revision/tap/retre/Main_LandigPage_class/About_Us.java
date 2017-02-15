@@ -77,8 +77,9 @@ public class About_Us extends AppCompatActivity {
                                 Picasso.with(About_Us.this)
                                         .load("http://www.retreatservicedapartments.com/sites/default/files/"+image)
                                         .centerCrop()
+//                                        .error(R.drawable.error)
                                         .placeholder(R.drawable.defult)
-                                        .resize(500, 300)
+                                        .resize(1500, 900)
                                         .into(imageview);
 //
                             }
